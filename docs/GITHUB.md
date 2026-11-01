@@ -1,5 +1,5 @@
 # GitHub — operação prevista
-Destino confirmado: `https://github.com/geovanegalan/game-vault-v2.git`, público. Pré-bootstrap em 01/11/2026 confirmou size=0, branches=[] e permissão administrativa pela CLI. Autoria local Geovane/no-reply confirmada pelo usuário; Git inicializado nesta pasta. Resultados remotos somente após executar/verificar, registrados em [PLANO-GITHUB v0.1](ambiente/PLANO-GITHUB.md) e STATUS. Não publicar segredos ou dados pessoais desnecessários.
+Destino: `https://github.com/geovanegalan/game-vault-v2.git`, público. Primeiro commit documental 263c7bb publicado; main/develop criadas e protegidas. Actions documentais passaram em ambas. Autoria no-reply e conexão GitHub/MCP verificadas. [Evidências](ambiente/EVIDENCIAS-BOOTSTRAP.md) e [plano](ambiente/PLANO-GITHUB.md). [Project pessoal GameVault 2.0](https://github.com/users/geovanegalan/projects/2) criado manualmente pelo usuário; sem ampliação de escopo da CLI. Issue #1 acompanha a preparação. Não publicar segredos ou dados pessoais desnecessários.
 
 ## Branches e PRs
 - main: referência estável. develop: integração de trabalho revisado. feature/<issue-ou-task>-<resumo>: tarefa isolada criada a partir de develop.
@@ -14,6 +14,8 @@ Antes de ativar uma regra, consultar a documentação atual do GitHub e testar c
 
 ## Issues e Projects
 Usar template de tarefa; uma Issue deve ligar REQ → DEC/ADR → TASK → PR → evidência. Proposta de Project editável: estados Backlog, Pronta, Em andamento, Em revisão, Concluída; campos prioridade, fase, requisito e dependências. Criar e ajustar somente com autorização. 'Concluída' exige critérios atendidos e integração manual quando necessária; trabalho local permanece indicado como tal.
+
+Consulta pública do Project #2 confirmou os cinco estados e os quatro campos, com Issue #1 em Em andamento. Tipos/opções dos campos e repositório padrão não inspecionados. PR #2 continua aberto no repositório, mas não apareceu no quadro exibido. Alterações do Project são manuais: usuário cancelou ampliação de escopo e restringiu o trabalho ao GameVault (DEC-029). Não acessar outras organizações ou voltar a pedir project à CLI por conveniência.
 
 ## Actions
 O workflow fornecido valida somente integridade do bootstrap e presença das cinco skills. Sem aplicação aprovada, não há build, lint, testes de produto ou deploy. Após escolher stack e estrutura, propor CI apropriada e atualizar nomes de checks nas regras. Nunca substituir testes reais por um job sempre verde; declarar verificações não executadas. Não há publicação nem deploy neste workflow.

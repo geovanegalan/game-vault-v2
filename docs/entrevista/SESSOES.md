@@ -25,7 +25,7 @@ Origem: mensagem do usuário nesta sessão do Codex em 01/11/2026. Nenhuma aprov
 - Objetivo declarado: evoluir com IA o GameVault feito na faculdade; biblioteca pessoal de jogos com avaliações, comentários, screenshots e interação entre usuários. Steam e Backloggd foram citados como referências. São desejos para discutir, sem composição de MVP aprovada.
 - Limite declarado: não iniciar jogos nem realizar compras na aplicação. Links externos para compra foram citados como possibilidade, não requisito fechado.
 - Experiência autodeclarada: intermediária a avançada em TypeScript, Node.js e SQL; básica em Git/GitHub. Quer aprofundar CI/CD, branches, pull requests e Git Flow, em paralelo a outro trabalho da faculdade.
-- Legado autorizado para consulta: `D:/estudos/gamevault-projeto-web/game-vault/`. Direção explicitamente escolhida: reescrita do zero, usando a base conceitual anterior, com revisão, funcionalidades novas e frontend novo. Registrada como DEC-001, sem aprovar escopo ou stack.
+- Legado autorizado para consulta: `[caminho local omitido da versão pública]`. Direção explicitamente escolhida: reescrita do zero, usando a base conceitual anterior, com revisão, funcionalidades novas e frontend novo. Registrada como DEC-001, sem aprovar escopo ou stack.
 - Não informou ainda experiência com Angular, frameworks de backend e testes, público prioritário, critério de sucesso, prazo ou orçamento.
 - O usuário mencionou possível consulta à memória. Não foi obtida memória externa; análise baseada no contexto disponível e nos arquivos autorizados.
 
@@ -203,12 +203,26 @@ Usuário aprovou stack e ADR-001/002 v0.1 e autorizou continuar ambiente/documen
 
 Autoria: usuário escolheu nome Geovane e email no-reply; ID/login confirmados pela API, configuração aplicada somente ao Git local recém-inicializado. Nenhuma alteração global. Remoto público vazio revalidado, origin configurado, antes de qualquer commit.
 
-Diagnóstico complementar identificou Windows 11 Pro x64, RAM 31,9 GB, WSL 3.0.3/Ubuntu WSL 2 e PostgreSQL 18.3 nativo em execução. Preservar banco existente. Docker não encontrado no PATH/diretórios padrão; plano concreto PLANO-AMBIENTE v0.1 propõe apenas Docker Desktop 4.97.0, pendente de aceite A-02. Python é alias sem interpretador; winget funciona com acesso apropriado. npm efetivo 12.0.2 vem do prefixo do usuário; pacote da distribuição Node é 11.19.0, sem necessidade comprovada de mudar nenhum.
+Diagnóstico complementar confirmou Windows x64 com WSL 2 e PostgreSQL nativo disponível; detalhes da máquina omitidos da versão pública. Preservar banco existente. Docker não encontrado no PATH/diretórios padrão; plano PLANO-AMBIENTE v0.1 propõe Docker Desktop 4.97.0, pendente de aceite A-02. Python é alias sem interpretador; winget funciona com acesso apropriado. npm efetivo 12.0.2 e pacote 11.19.0 coexistem, sem necessidade comprovada de mudar nenhum.
 
 Conector GitHub ficou disponível durante a etapa e confirmou conta/repositório/permissões, substituindo a pendência anterior de MCP. Usar conector quando suficiente; CLI para Git/proteções/Projects não expostos nele. Consultas e diagnóstico até esta coleta não instalaram programas ou alteraram recursos remotos.
 
 Documentos finalizados para o primeiro commit: aprovações, ADRs, comparação, README, regras GitHub, backlog/tarefa proposta e plano de ambiente com instalação pendente explicitamente separada. Modelos mantidos pelo uso real no fluxo. Verificação pré-commit: 37 Markdown, 27 links locais sem destino ausente; nenhum padrão conhecido de credencial encontrado. Resultados reais de commit, CI e proteções serão registrados após execução, sem antecipar sucesso.
 
 Revisão documental com gv-code-review no mesmo agente (não humana/independente): conjunto inicial de 40 arquivos, sem aplicação. git diff --cached --check passou. Corrigidas duas referências de backlog/tarefa que ainda chamavam ADRs de propostas; tarefa de aplicação permanece sem autorização. Sem achado material restante na revisão documental limitada. Python e testes de produto não executados; CI documental a verificar após push.
+
+### Resultado do primeiro commit e configuração GitHub — 01/11/2026
+Commit inicial 263c7bbe4578504d1f9c6b7f6fbad560a333d70e publicado em main; develop criada no mesmo SHA pelo conector. CI documental passou nas duas branches, com etapa Validar bootstrap confirmada. Proteções aplicadas e retornadas pela API: PR/check exigidos, admin incluído, sem força/exclusão; auto-merge false confirmado. Nenhum merge ou tentativa de push direto proibido após bootstrap.
+
+Issue #1 aberta para TASK-000. Feature docs-bootstrap-evidencias criada de develop para atualizar resultados por PR; evidências detalhadas em docs/ambiente/EVIDENCIAS-BOOTSTRAP.md. Nenhum código de aplicação começou.
+
+Project não criado: CLI sem read:project; gerenciamento exige project. Não foi ampliada permissão automaticamente. Opções: usuário autoriza via fluxo oficial de gh auth refresh --hostname github.com --scopes project, ou cria Project manualmente. Docker A-02 também continua pendente de aprovação específica; nenhum instalador foi executado. Ficam separadas conclusão do primeiro commit, preparação ainda parcial do ambiente e integração manual das evidências.
+
+### Project manual e limite de acesso — atualização de 01/11/2026
+O usuário cancelou a autorização adicional e escolheu criação/configuração manual, sem acessar outras organizações/projetos. Decisão operacional DEC-029; não voltar a solicitar escopo project por conveniência. Esta escolha substitui a alternativa anterior de ampliar credenciais da CLI; não reduz ou altera automaticamente permissões antigas da conta.
+
+Link fornecido pelo usuário: https://github.com/users/geovanegalan/projects/2. Consulta pública por pesquisa não carregou a página dinâmica; navegador em segundo plano, sem login, permitiu leitura somente do Project indicado. Confirmados: título GameVault 2.0, estados Backlog/Pronta/Em andamento/Em revisão/Concluída; campos Prioridade/Fase/Requisito/Dependências; Issue #1 em Em andamento. Tipos/opções de campos e repositório padrão não conferidos. PR #2 não apareceu no quadro; consulta de metadados no próprio repositório confirmou que continua aberto, sem merge.
+
+Nenhuma alteração no quadro, login, escopo ou consulta a outra organização. Atualizados README, STATUS, evidências e plano GitHub v0.2 para registrar o resultado sem alegar configuração completa. Docker A-02 e TASK-001 continuam pendentes das respectivas autorizações.
 
 Para cada sessão registre: data; perguntas; respostas fiéis; fatos observados no legado com arquivo/trecho; hipóteses separadas; recomendações e tradeoffs; dúvidas; propostas de decisão com IDs; próximo bloco. Não use dados pessoais reais desnecessários.

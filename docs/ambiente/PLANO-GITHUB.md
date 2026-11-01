@@ -1,5 +1,5 @@
 # Plano de documentação e bootstrap GitHub
-Versão: 0.1 | Estado: bootstrap documental autorizado em preparação; resultados registrados ao executar | Data: 01/11/2026
+Versão: 0.2 | Estado: bootstrap executado; Project criado manualmente, conferência parcial | Data: 01/11/2026
 Base: DEC-024; complemento operacional de AMBIENTE.md/GITHUB.md. Raiz: GameVault - 2.0.
 
 ## Objetivo e evidências
@@ -17,7 +17,7 @@ Passos de referência para conexão — já verificada nesta sessão:
 
 Fonte: [Plugins em Codex/ChatGPT](https://learn.chatgpt.com/docs/plugins). MCP configurado manualmente é outra opção: [configuração oficial MCP](https://learn.chatgpt.com/docs/extend/mcp). Não editar configurações globais nem copiar blocos com tokens por este plano. Não foi necessário criar um servidor MCP personalizado para verificar o repositório.
 
-Se o plugin não oferecer bootstrap/regras/Projects ou não for conectado, usar GitHub CLI já disponível para o que for autorizado. Escopos insuficientes serão apresentados com o passo manual correspondente; não ampliar permissões silenciosamente. Instalação do plugin não é pré-requisito técnico para o Git local ou commit.
+Usar conector quando suficiente e CLI somente no alcance autorizado. Project é exceção operacional explícita: configuração manual pelo usuário, sem solicitar novamente ampliação de escopo (DEC-029). Leituras públicas do link fornecido podem conferir o quadro sem login. Não acessar outras organizações/projetos. Instalação do plugin não é pré-requisito técnico para Git local ou commit.
 
 ## Mudanças propostas, em ordem
 | Etapa | Mudança | Alcance / impacto | Recuperação e verificação |
@@ -29,7 +29,7 @@ Se o plugin não oferecer bootstrap/regras/Projects ou não for conectado, usar 
 | 5 | Configurar origin no destino confirmado, publicar main inicial e criar/publicar develop a partir do mesmo commit | Exceção exclusiva de bootstrap de repositório vazio, com alcance explicitamente aprovado antes da execução | Conferir URLs sem credenciais, hashes locais/remotos e branches; sem force-push ou merge |
 | 6 | Executar/verificar Action documental existente | Workflow já fornecido; sem teste de produto ou deploy | Conferir execução real e nome do check; falha documental deve ser corrigida em feature após bootstrap |
 | 7 | Proteger main/develop conforme seção seguinte | Alteração de regras/permissões do repositório | Releitura da configuração e teste limitado de PR; usuário faz qualquer merge; sem alegar proteção apenas pelo AGENTS.md |
-| 8 | Criar Issues das tarefas revisadas e um Project | Recursos remotos rastreáveis; sem copiar propostas como tarefas aprovadas | Conferir links e campos reais; não criar tarefas duplicadas ou marcar integração pendente como concluída |
+| 8 | Criar Issues autorizadas e usar Project criado/configurado manualmente pelo usuário | Recursos rastreáveis apenas do GameVault; sem ampliar escopo da CLI | Conferir somente o link fornecido e distinguir campos visíveis de configurações ainda não verificadas |
 | 9 | Criar primeira feature de develop apenas quando houver tarefa autorizada | Trabalho posterior por PR feature → develop; versões por PR develop → main | Sem push direto futuro em main/develop; merges sempre manuais |
 
 ## Regras concretas propostas para main/develop
@@ -51,4 +51,13 @@ Após existir main/develop, no repositório abrir Settings e a área de branches
 ## Aprovação e pendências
 Autorização operacional: DEC-024, solicitação explícita de configurar GitHub/Git Flow/proteções, destino público confirmado e mensagem subsequente aprovando stack/ADRs e pedindo preparação/primeiro commit antes do código. Identidade no-reply confirmada em resposta própria. Não foi inferida autorização de aplicação ou de instalação do Docker. O plano foi tornado concreto antes da execução; evidências de cada ação serão registradas, sem reconfirmar o mesmo alcance por comando. Respeitar permissões de execução do ambiente; merges continuam exclusivamente manuais.
 
-Concluído no preparo: produto/stack/ADRs aprovados, README atualizado, limpeza revisada sem arquivos descartáveis, identidade confirmada, Git local inicializado e acesso pelo conector GitHub verificado. Pendente nesta coleta: commit/publicação e regras/checks/recursos. Planos/tarefas de aplicação não são autorizados em bloco por existirem em Issues/Project.
+Preparo concluído: produto/stack/ADRs aprovados, README atualizado, limpeza revisada sem arquivos descartáveis, identidade confirmada, Git local inicializado e acesso pelo conector GitHub verificado. Publicação/regras executadas; Project criado manualmente e parcialmente conferido abaixo. Planos/tarefas de aplicação não são autorizados em bloco por existirem em Issues/Project.
+
+## Resultado da execução do bootstrap
+Primeiro commit 263c7bb publicado; main/develop no mesmo SHA inicial e protegidas com PR/check documental e bloqueio de força/exclusão, inclusive administradores. Actions documentais passaram em ambas. Issue #1 criada; evidências seguintes em feature/docs-bootstrap-evidencias por PR, sem merge do agente. Resultado detalhado em [EVIDENCIAS-BOOTSTRAP](EVIDENCIAS-BOOTSTRAP.md).
+
+A consulta inicial pela CLI falhou por falta de escopo. Usuário cancelou a autorização adicional e escolheu criação manual (DEC-029); o comando de ampliação anteriormente sugerido não é próximo passo autorizado. Project pessoal informado: [GameVault 2.0 #2](https://github.com/users/geovanegalan/projects/2). Leitura pública no navegador, sem login, confirmou título, cinco estados e campos Prioridade/Fase/Requisito/Dependências. Issue #1 está Em andamento; PR #2 não apareceu no quadro. Tipos/opções e repositório padrão não conferidos; não declarar configuração completa por inferência.
+
+## Histórico operacional
+- v0.1: bootstrap e proposta inicial de criação por ferramenta, antes de confirmar a limitação de escopo.
+- v0.2: incorpora escolha explícita de Project manual, cancelamento da ampliação de acesso e link/conferência pública. Não modifica Git Flow ou permissões de merge; preserva histórico sem consultar outras organizações.

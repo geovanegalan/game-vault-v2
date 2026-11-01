@@ -1,5 +1,5 @@
 # Plano de documentação e bootstrap GitHub
-Versão: 0.1 | Estado: bootstrap documental autorizado em preparação; resultados registrados ao executar | Data: 01/11/2026
+Versão: 0.1 | Estado: primeiro commit/branches/CI/proteções executados; Project pendente | Data: 01/11/2026
 Base: DEC-024; complemento operacional de AMBIENTE.md/GITHUB.md. Raiz: GameVault - 2.0.
 
 ## Objetivo e evidências
@@ -51,4 +51,9 @@ Após existir main/develop, no repositório abrir Settings e a área de branches
 ## Aprovação e pendências
 Autorização operacional: DEC-024, solicitação explícita de configurar GitHub/Git Flow/proteções, destino público confirmado e mensagem subsequente aprovando stack/ADRs e pedindo preparação/primeiro commit antes do código. Identidade no-reply confirmada em resposta própria. Não foi inferida autorização de aplicação ou de instalação do Docker. O plano foi tornado concreto antes da execução; evidências de cada ação serão registradas, sem reconfirmar o mesmo alcance por comando. Respeitar permissões de execução do ambiente; merges continuam exclusivamente manuais.
 
-Concluído no preparo: produto/stack/ADRs aprovados, README atualizado, limpeza revisada sem arquivos descartáveis, identidade confirmada, Git local inicializado e acesso pelo conector GitHub verificado. Pendente nesta coleta: commit/publicação e regras/checks/recursos. Planos/tarefas de aplicação não são autorizados em bloco por existirem em Issues/Project.
+Preparo concluído: produto/stack/ADRs aprovados, README atualizado, limpeza revisada sem arquivos descartáveis, identidade confirmada, Git local inicializado e acesso pelo conector GitHub verificado. Resultado posterior de publicação/regras abaixo; Project continua pendente. Planos/tarefas de aplicação não são autorizados em bloco por existirem em Issues/Project.
+
+## Resultado da execução do bootstrap
+Primeiro commit 263c7bb publicado; main/develop no mesmo SHA inicial e protegidas com PR/check documental e bloqueio de força/exclusão, inclusive administradores. Actions documentais passaram em ambas. Issue #1 criada; evidências seguintes em feature/docs-bootstrap-evidencias por PR, sem merge do agente. Resultado detalhado em [EVIDENCIAS-BOOTSTRAP](EVIDENCIAS-BOOTSTRAP.md).
+
+Project não criado: credencial CLI não possui read:project; gerenciamento exige project conforme ajuda do comando instalado. Não ampliar escopo sem participação do usuário. Passo opcional: `gh auth refresh --hostname github.com --scopes project`, concluindo autorização oficial; alternativa é criação manual. Proteções/commit não dependem dessa pendência. Tarefas de aplicação continuam sem autorização própria.

@@ -2,7 +2,7 @@
 
 Biblioteca de jogos e comunidade baseada em avaliações públicas e amizades. Projeto de portfólio desenvolvido do zero com **Spec-Driven Development**: especificar o comportamento, revisar decisões, implementar tarefas autorizadas e registrar evidências.
 
-> **Estado atual:** produto, stack e arquitetura aprovados. Preparação de ambiente e bootstrap documental em andamento. Ainda não existe aplicação para executar. Consulte [STATUS](docs/STATUS.md) para evidências e próximos passos.
+> **Estado atual:** produto, stack e arquitetura aprovados; primeiro commit documental publicado, main/develop protegidas e CI documental passou. Instalação Docker e Project pendentes. Ainda não existe aplicação para executar. Consulte [STATUS](docs/STATUS.md).
 
 ## Produto planejado
 
@@ -45,7 +45,7 @@ A entrega prevista terá um comando para iniciar após pré-requisitos documenta
 
 ## Desenvolvimento e GitHub
 
-Destino: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2), público. O bootstrap documental parte de repositório vazio verificado em 01/11/2026; evidências de commit, branches, proteções e demais recursos serão registradas em [STATUS](docs/STATUS.md) e no [plano GitHub](docs/ambiente/PLANO-GITHUB.md), conforme execução real.
+Destino: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2), público. [Primeiro commit 263c7bb](https://github.com/geovanegalan/game-vault-v2/commit/263c7bbe4578504d1f9c6b7f6fbad560a333d70e), exclusivamente documental. main/develop protegidas com PR obrigatório e verificação documental, sem força/exclusão. [Evidências reais](docs/ambiente/EVIDENCIAS-BOOTSTRAP.md); Project ainda pendente por autorização de escopo.
 
 Fluxo previsto, sem merges automáticos:
 
@@ -73,4 +73,4 @@ O workflow existente valida somente a integridade documental. Não há build/tes
 - [Modelos](docs/modelos/): recursos para ADR, tarefa, revisão e preparação; não são especificações de produto vigentes.
 - [AGENTS.md](AGENTS.md) e [.agents/skills](.agents/skills/): contrato de colaboração e cinco skills locais.
 
-Próxima etapa: concluir o bootstrap documental antes do código, aprovar/executar o item de instalação do plano de ambiente e autorizar a primeira tarefa de aplicação, com tutoria e evidências reais.
+Próxima etapa: revisar/mesclar manualmente a evidência documental por PR, aprovar/executar A-02 do plano de ambiente e preparar a primeira tarefa de aplicação com tutoria e evidências reais. Nenhum código começou antes do primeiro commit.

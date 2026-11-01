@@ -1,5 +1,5 @@
 # GitHub — operação prevista
-Destino confirmado: `https://github.com/geovanegalan/game-vault-v2.git`, público. Pré-bootstrap em 01/11/2026 confirmou size=0, branches=[] e permissão administrativa pela CLI. Autoria local Geovane/no-reply confirmada pelo usuário; Git inicializado nesta pasta. Resultados remotos somente após executar/verificar, registrados em [PLANO-GITHUB v0.1](ambiente/PLANO-GITHUB.md) e STATUS. Não publicar segredos ou dados pessoais desnecessários.
+Destino: `https://github.com/geovanegalan/game-vault-v2.git`, público. Primeiro commit documental 263c7bb publicado; main/develop criadas e protegidas. Actions documentais passaram em ambas. Autoria no-reply e conexão GitHub/MCP verificadas. [Evidências](ambiente/EVIDENCIAS-BOOTSTRAP.md) e [plano](ambiente/PLANO-GITHUB.md). Project pendente por escopo da CLI; Issue #1 acompanha a preparação. Não publicar segredos ou dados pessoais desnecessários.
 
 ## Branches e PRs
 - main: referência estável. develop: integração de trabalho revisado. feature/<issue-ou-task>-<resumo>: tarefa isolada criada a partir de develop.

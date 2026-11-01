@@ -1,32 +1,36 @@
 # Ponto de retomada
-Coleta de 01/11/2026 — preparação do ambiente e bootstrap documental, antes do primeiro commit.
+
+Atualizado em 01/11/2026 — limpeza documental e configuração do Project, antes de código.
 
 ## Aprovações e limites
+
 - Produto: VISAO v0.3, PRD v0.6, MVP v0.6 e P-01 a P-06 — DEC-023.
-- Stack: COMPARACAO-STACK v0.1 — DEC-025; arquitetura ADR-001 v0.1 — DEC-026; autenticação ADR-002 v0.1 — DEC-027.
-- BACKLOG v0.1 é planejamento; TASK-001 ainda não autorizada. Nenhuma aplicação, dependência de produto, banco ou migração criada; nenhum teste de produto executado.
-- Primeiro commit exclusivamente documental antes de código — DEC-024, reafirmada na mensagem que aprovou stack/ADRs.
+- Stack: COMPARACAO-STACK v0.1 — DEC-025; ADR-001/002 v0.1 — DEC-026/027.
+- BACKLOG v0.1 é proposta; TASK-001 ainda não autorizada. Nenhuma aplicação, dependência de produto, migração ou teste de produto criado/executado.
+- DEC-030 autoriza CLI somente para o repositório GameVault e Project pessoal #2; substitui a administração manual de DEC-029. Nenhum outro repositório/organização consultado.
+- DEC-031 autoriza limpeza documental, ajustes e commit. Todos os merges continuam manuais pelo usuário; nenhum push direto futuro em main/develop, força ou auto-merge permitido.
 
-## Preparação documental
-- Metadados de aprovação atualizados sem mudar regras aprovadas; README reestruturado e navegação revisada.
-- Todos os modelos atuais têm uso em skills/verificador; nenhum arquivo confirmado descartável ou removido. Ver ORGANIZACAO-DOCUMENTAL.md.
-- Revisão: 37 Markdown, 27 links locais, zero destinos ausentes. Busca por padrões conhecidos de credenciais sem ocorrências; não é auditoria completa.
-- Verificador Python do kit não executado, pois comando aponta a alias sem interpretador. Action documental será verificada após publicar; não comprova produto.
+## GitHub e Project
 
-## Ambiente
-- Windows 11 Pro x64, 31,9 GB de RAM, WSL 3.0.3 com Ubuntu WSL 2; Node 24.21.0 e npm efetivo 12.0.2 compatíveis documentalmente.
-- PostgreSQL 18.3 já existente e em execução: preservar; banco do projeto será isolado. Nenhuma conexão a dados ou leitura de credenciais feita.
-- Docker ausente no PATH/diretórios padrão consultados. PLANO-AMBIENTE v0.1 propõe Docker Desktop 4.97.0 como única instalação nesta etapa; aguardando aprovação específica do item A-02.
-- SLAT reportou falso apesar de hypervisor/virtualização presentes; não alterar BIOS nem declarar backend funcional sem verificar. Nenhum programa instalado/atualizado.
+- Repositório público: [game-vault-v2](https://github.com/geovanegalan/game-vault-v2). Autoria local Geovane/no-reply; configuração global preservada.
+- Primeiro commit exclusivamente documental: `263c7bb`; main/develop protegidas com PR/check documental, branch atualizada, conversas resolvidas, administradores incluídos e força/exclusão bloqueadas. Auto-merge false. CI passou nas bases no bootstrap.
+- [PR #2](https://github.com/geovanegalan/game-vault-v2/pull/2) mesclado manualmente pelo usuário em develop, commit `52b2acd`. Nova feature/docs-organizacao-project criada desse estado remoto.
+- [Project GameVault 2.0 #2](https://github.com/users/geovanegalan/projects/2) vinculado ao repositório; descrição/README configurados e estados/opções conferidos. Issue #1 em andamento, PR #2 concluído; Issue #3 acompanha esta limpeza.
+- Repositório padrão para criação pela interface, views e automações não alterados/atestados. CLI usa destino explícito. Ver [guia GitHub](GITHUB.md) e [evidências](ambiente/EVIDENCIAS-BOOTSTRAP.md).
 
-## GitHub e Git — pré-bootstrap
-- Conta/remoto confirmados: geovanegalan, https://github.com/geovanegalan/game-vault-v2.git, público, sem branches na revalidação; permissão administrativa.
-- Conector GitHub/MCP agora disponível e confirmado por consultas de login/repositório. CLI permanece para operações não oferecidas pelo conector.
-- Git local inicializado em main, origin configurado. Autoria escolhida: Geovane, email no-reply derivado do ID/login GitHub; somente configuração local. Global preservado.
-- PLANO-GITHUB v0.1 em execução documental. Commit/publicação/regras/recursos ainda não realizados no instante desta coleta; registrar evidências posteriores em feature documental, sem push direto futuro em main/develop.
-- Todo merge é manual pelo usuário; sem auto-merge, force-push ou código antes do primeiro commit.
+## Limpeza documental
 
-## Próxima ação
-- Realizar primeiro commit documental e bootstrap autorizado; conferir Action e proteções reais, usando conector/CLI conforme capacidade.
-- Apresentar plano de instalação A-02 para aprovação antes de Docker; dependências/versões exatas de aplicação na futura TASK-001.
-- Destino, visibilidade, identidade, experiência em testes e stack/ADRs já confirmados; não repetir essas perguntas.
+- Removidos dez arquivos redundantes: prompt inicial, sete modelos vazios, organização documental antiga e plano GitHub já executado. Operação consolidada em GITHUB.md, STATUS e evidências; versões anteriores recuperáveis no Git.
+- Mantidos requisitos aprovados, ADRs, decisões, entrevista, diagnóstico/plano de instalação, fontes, backlog e tarefa proposta, skills e templates Issue/PR. São documentação do projeto e devem continuar versionados.
+- README simplificado; quatro skills e verificador ajustados para documentos reais. .gitignore já cobre .env, dependências, builds, cobertura, logs e caches existentes; nenhum documento necessário ocultado.
+- Conferência local passou: 29 Markdown, 27 links locais válidos, 15 documentos essenciais presentes e cinco skills com metadados válidos; git diff --check passou. Produto/stack/ADRs sem alterações. Busca por padrões conhecidos de segredos/caminhos pessoais sem ocorrência; não equivale a auditoria completa. Script Python não executado localmente; resultado real da CI será registrado na Issue #3 e no PR desta feature. CI documental não comprova comportamento da aplicação.
+- Histórico inicial já público não reescrito; a minimização posterior de detalhes do host não remove dados de commits antigos. Ver reviews/BOOTSTRAP.md.
+
+## Ambiente e próximos passos
+
+- Node 24.21.0 e npm efetivo 12.0.2 compatíveis documentalmente, sem atualização necessária. Windows x64/WSL 2 disponíveis; PostgreSQL 18.3 nativo preservado, sem acesso a dados/credenciais.
+- Docker não instalado. A-02 de [PLANO-AMBIENTE v0.1](ambiente/PLANO-AMBIENTE.md) propõe Docker Desktop 4.97.0 e aguarda aprovação do instalador/impacto; verificar backend após instalar. Nenhuma alteração Windows/WSL/banco feita.
+- Python local é alias sem interpretador; CI executa o script no GitHub. Não instalar apenas para o kit.
+- Usuário revisar/mesclar manualmente o PR desta limpeza para develop; só depois uma versão revisada seguirá por PR develop → main para atualizar a página padrão do GitHub.
+- Aprovar ou ajustar A-02 antes de instalar Docker. Revisar e autorizar TASK-001 antes do código.
+- Provedor real do catálogo, parâmetros de senha/sessão e versões exatas de dependências continuam para refinamento nas tarefas correspondentes.

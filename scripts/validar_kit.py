@@ -4,9 +4,10 @@ import re
 
 root = Path(__file__).resolve().parents[1]
 required = ["AGENTS.md", "README.md", "docs/00-contexto.md", "docs/STATUS.md",
-            "docs/decisoes/REGISTRO.md", "prompts/INICIO-CODEX.md",
-            "docs/AMBIENTE.md", "docs/ambiente/DIAGNOSTICO.md",
-            "docs/modelos/PLANO-AMBIENTE.md", "docs/modelos/COMPARACAO-STACK.md"]
+            "docs/decisoes/REGISTRO.md", "docs/VISAO.md", "docs/PRD.md", "docs/MVP.md",
+            "docs/AMBIENTE.md", "docs/GITHUB.md", "docs/ambiente/DIAGNOSTICO.md",
+            "docs/ambiente/PLANO-AMBIENTE.md", "docs/COMPARACAO-STACK.md",
+            "docs/arquitetura/ADR-001.md", "docs/arquitetura/ADR-002.md"]
 errors = []
 for name in required:
     path = root / name

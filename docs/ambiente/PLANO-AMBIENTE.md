@@ -6,9 +6,9 @@ Raiz: GameVault - 2.0 | Base: DEC-025/026/027 | Diagnóstico: DIAGNOSTICO.md
 Preparar somente o que falta para a arquitetura aprovada, preservando o ambiente atual. Não gerar aplicação ou instalar suas dependências antes do primeiro commit documental e de tarefa autorizada.
 
 ## Diagnóstico complementar
-- Windows 11 Pro 64 bits, build 26200; RAM total 31,9 GB, disponível 16,5 GB no momento da leitura; virtualização de firmware e hypervisor presentes.
+- Windows x64; requisitos básicos de sistema consultados. Caminhos pessoais, métricas de hardware e identificação detalhada do host omitidos desta versão pública.
 - WSL 3.0.3, Ubuntu registrado como WSL 2 e parado. WSL não precisa ser instalado/atualizado por esta evidência.
-- A consulta de SLAT reportou falso enquanto hypervisor estava presente; não concluir incompatibilidade ou alterar BIOS. Validar inicialização do backend WSL antes de considerar Docker pronto; se houver falha, interromper e investigar.
+- Backend WSL ainda não foi executado como teste de Docker; não concluir compatibilidade completa ou alterar BIOS. Validar inicialização antes de considerar Docker pronto; se houver falha, interromper e investigar.
 - Node 24.21.0; comando npm executa 12.0.2 do prefixo do usuário, embora a distribuição de Node contenha npm 11.19.0. Ambos os manifests consultados aceitam Node 24.21.0; não atualizar ou remover nenhum deles. Registrar versão efetiva nos futuros builds.
 - PostgreSQL 18.3 já instalado; serviço postgresql-x64-18 em execução. Não atualizar, reconfigurar, parar, conectar com credenciais ou migrar esse banco. O PostgreSQL do projeto será isolado em contêiner, sem expor 5432 no host por padrão.
 - Docker não encontrado no PATH nem nos dois diretórios padrão consultados. Não foram percorridos outros discos/pastas em busca de instalações.
@@ -39,4 +39,4 @@ Linhas: Angular 22 / TypeScript 6.0, NestJS 12, Prisma 7, PostgreSQL 18; Vitest 
 Consultadas em 01/11/2026: [Docker Desktop 4.97.0](https://docs.docker.com/desktop/release-notes/#4970), [instalação Windows](https://docs.docker.com/desktop/setup/install/windows-install/), [permissões Windows](https://docs.docker.com/desktop/setup/install/windows-permission-requirements), [WSL no Docker](https://docs.docker.com/desktop/features/wsl), requisitos de Angular/Nest/Prisma em `../COMPARACAO-STACK.md`. Liberação do instalador pode ser gradual; se o artefato específico não estiver disponível, apresentar outra versão concreta para revisão.
 
 ## Aprovação / execução
-Pendente para A-02. A mensagem que aprova stack/ADRs autoriza preparar este plano, não foi tratada como aprovação de instalador/versão/impacto ainda não apresentados. Nenhuma instalação executada. Bootstrap GitHub tem autorização e evidências próprias em PLANO-GITHUB.md/REGISTRO.md.
+Pendente para A-02. A mensagem que aprova stack/ADRs autoriza preparar este plano, não foi tratada como aprovação de instalador/versão/impacto ainda não apresentados. Nenhuma instalação executada. Bootstrap GitHub tem autorização e evidências próprias em ../GITHUB.md, EVIDENCIAS-BOOTSTRAP.md e ../decisoes/REGISTRO.md.

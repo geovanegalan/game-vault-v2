@@ -2,7 +2,7 @@
 Versão: 0.1 | Estado: proposta | Data: 01/11/2026
 Base de produto: DEC-023. Base técnica aprovada: COMPARACAO-STACK v0.1 e ADR-001/002 v0.1, DEC-025/026/027. O backlog continua planejamento, sem autorização automática das tarefas.
 
-Nenhuma Issue/Project criada; IDs abaixo são locais. As linhas definem resultados e dependências, não autorizam execução em bloco. Cada tarefa de aplicação receberá detalhamento e autorização antes de começar. Dividir tarefas que não couberem numa sessão confortável; não prometer prazo a partir da disponibilidade estimada.
+TASK-000 é acompanhada pela [Issue #1](https://github.com/geovanegalan/game-vault-v2/issues/1) no [Project GameVault](https://github.com/users/geovanegalan/projects/2). Os demais IDs abaixo são locais, sem Issues de aplicação criadas. As linhas definem resultados e dependências, não autorizam execução em bloco. Cada tarefa de aplicação receberá detalhamento e autorização antes de começar. Dividir tarefas que não couberem numa sessão confortável; não prometer prazo a partir da disponibilidade estimada.
 
 | Tarefa | Resultado demonstrável e critério principal | REQ / decisões | Dependências | Validação e exclusões |
 | --- | --- | --- | --- | --- |

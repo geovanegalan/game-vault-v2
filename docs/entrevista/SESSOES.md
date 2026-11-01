@@ -189,8 +189,8 @@ Respostas à consulta durante o planejamento:
 ### Planejamento preparado — propostas v0.1
 - COMPARACAO-STACK, ADR-001 e ADR-002: alternativas contextualizadas, requisitos publicados e recomendação, sem adoção (DEC-025 a DEC-027).
 - BACKLOG e TASK-001: tarefas pequenas com REQ/DEC, critérios e dependências; primeira aplicação depende do primeiro commit documental (DEC-028).
-- PLANO-GITHUB: bootstrap, proteções, check documental, Issues/Project e verificações; identidade e alcance ainda pendentes antes de alteração.
-- ORGANIZACAO-DOCUMENTAL: todos os modelos atuais têm uso em skills/verificador/refinamento; nenhum arquivo confirmado como descartável e nenhuma exclusão executada. README reestruturado com navegação e estado atual.
+- PLANO-GITHUB (registro histórico, depois consolidado em GITHUB.md): bootstrap, proteções, check documental, Issues/Project e verificações; identidade e alcance ainda pendentes naquela coleta.
+- ORGANIZACAO-DOCUMENTAL (registro histórico, depois removido em DEC-031): modelos então usados por skills/verificador/refinamento; nenhuma exclusão executada naquela coleta. A limpeza posterior ajustou essas dependências e removeu modelos/prompt redundantes.
 - Plugin GitHub encontrado e sugerido, não instalado/conectado segundo o último estado confirmado. Acesso CLI real não foi descrito como MCP conectado. Instalação/autorização do plugin é etapa do usuário; alternativa CLI já comprovada.
 - Fontes oficiais em FONTES e comparação. Node observado atende aos intervalos publicados; não há atualização justificada agora. Nenhuma instalação, app, migração, commit ou mudança remota nesta etapa.
 

@@ -1,76 +1,65 @@
 # GameVault 2.0
 
-Biblioteca de jogos e comunidade baseada em avaliações públicas e amizades. Projeto de portfólio desenvolvido do zero com **Spec-Driven Development**: especificar o comportamento, revisar decisões, implementar tarefas autorizadas e registrar evidências.
+Biblioteca pessoal de jogos e comunidade para avaliar, fazer amigos e trocar experiências. Reescrita do zero de um projeto acadêmico, desenvolvida com **Spec-Driven Development**: definir o comportamento, aprovar decisões e implementar em tarefas verificáveis.
 
-> **Estado atual:** produto, stack e arquitetura aprovados; primeiro commit documental publicado, main/develop protegidas e CI documental passou. Project criado manualmente; instalação Docker pendente. Ainda não existe aplicação para executar. Consulte [STATUS](docs/STATUS.md).
+> **Em planejamento.** Produto, stack e arquitetura aprovados; primeiro commit documental publicado. A aplicação ainda não existe. Veja o [estado atual e as pendências](docs/STATUS.md).
 
-## Produto planejado
+## O que está planejado
 
-- Biblioteca pública com estados quero jogar, jogando, pausado, concluído e abandonado; favorito independente.
-- Avaliações de 0 a 5 estrelas, incluindo meias estrelas, texto opcional e comentários.
-- Perfil público com nickname único que diferencia maiúsculas/minúsculas; cadastro/login por email e senha.
-- Solicitações de amizade e feed cronológico com novas avaliações dos amigos e conteúdo editorial de exemplo.
-- Demonstração local com dados fictícios e sem chave; busca real de jogos por API configurável como opção.
+- Biblioteca pública com estados de progresso e favoritos independentes.
+- Avaliações públicas de 0 a 5 estrelas, com meias estrelas, texto opcional e comentários.
+- Perfis públicos, cadastro/login e solicitações de amizade.
+- Feed cronológico com novas avaliações dos amigos e conteúdo editorial de demonstração.
+- Demonstração local com jogos fictícios, sem chave; integração opcional com API de jogos reais.
 
-O objetivo é experimentar localmente sem hospedagem paga. Instalações locais não compartilham comunidade entre computadores. Upload de screenshots, chats/grupos e fluxos de recuperação/confirmação de email ficam fora da primeira entrega. O projeto anterior serve somente de contexto; código e banco não serão importados.
+O foco é portfólio e aprendizado, sem hospedagem paga. Cada instalação terá seus próprios dados. Screenshots enviadas por usuários, chats, grupos e recuperação/confirmação de email ficam fora da primeira entrega. O legado serve apenas de contexto; código e banco não serão importados.
 
-## Especificações e decisões
+## Especificações
 
-| Documento | O que contém | Estado |
+| Documento | Conteúdo | Estado |
 | --- | --- | --- |
-| [Visão v0.3](docs/VISAO.md) | Público, valor, aprendizado e limites | Aprovada — DEC-023 |
-| [PRD v0.6](docs/PRD.md) | Requisitos, regras e critérios de aceitação | Aprovado — DEC-023, incluindo P-01 a P-06 |
-| [MVP v0.6](docs/MVP.md) | Fronteira e verificação da primeira entrega | Aprovado — DEC-023 |
-| [Registro de decisões](docs/decisoes/REGISTRO.md) | Aprovações e evidências; propostas distintas de decisões | Fonte de autoridade |
-| [Status](docs/STATUS.md) | Ponto de retomada, verificações e pendências | Atualizado por etapa |
+| [Visão](docs/VISAO.md) | Público, valor e objetivos de aprendizado | v0.3 aprovada |
+| [PRD](docs/PRD.md) | Requisitos, regras e critérios de aceitação | v0.6 aprovado |
+| [MVP](docs/MVP.md) | Fronteira da primeira entrega | v0.6 aprovado |
+| [Decisões](docs/decisoes/REGISTRO.md) | Aprovações, evidências e propostas pendentes | Fonte de autoridade |
 
-## Planejamento técnico
+## Stack e arquitetura
 
-| Documento | Finalidade |
+| Área | Escolha aprovada |
 | --- | --- |
-| [Comparação de stack](docs/COMPARACAO-STACK.md) | Escolha aprovada em DEC-025 e alternativas consideradas |
-| [ADR-001: arquitetura](docs/arquitetura/ADR-001.md) | Organização, limites, dados e execução local — aprovado em DEC-026 |
-| [ADR-002: autenticação](docs/arquitetura/ADR-002.md) | Estratégia de sessões/cookies — aprovada em DEC-027 |
-| [Backlog inicial](docs/planejamento/BACKLOG.md) | Resultados pequenos, dependências e validação por tarefa |
-| [TASK-001 proposta](docs/tarefas/TASK-001.md) | Primeira base técnica após documentação/ambiente aprovados |
-| [Comparação de catálogo](docs/catalogo/COMPARACAO.md) | API real opcional; nenhum provedor escolhido |
+| Linguagem e execução | TypeScript e Node.js 24 |
+| Interface | Angular |
+| API | NestJS, com módulos em uma aplicação |
+| Dados | PostgreSQL e Prisma |
+| Organização e execução local | npm workspaces e Docker Compose |
+| Testes planejados | Vitest, integração e Playwright |
 
-A stack aprovada é TypeScript/Angular, NestJS modular, PostgreSQL/Prisma, npm workspaces e Compose, com testes progressivos Vitest/integração/Playwright. Linhas Angular 22, NestJS 12, Prisma 7 e PostgreSQL 18; versões exatas de dependências locais serão fixadas antes da tarefa de aplicação. ADR significa registro de decisão de arquitetura; aprovar a estratégia não equivale a executar instalações ou código.
+A [comparação de stack](docs/COMPARACAO-STACK.md) registra alternativas e consequências. Os registros [ADR-001: arquitetura](docs/arquitetura/ADR-001.md) e [ADR-002: autenticação](docs/arquitetura/ADR-002.md) detalham as escolhas. Dependências locais serão fixadas na tarefa correspondente; aprovar a stack não autoriza todas as instalações ou tarefas.
 
 ## Como experimentar
 
-A aplicação ainda não foi criada. Não há comando de execução, conta de demonstração ou integração real disponível neste estágio.
+Ainda não há comando de execução nem contas de demonstração disponíveis. A entrega planejada permitirá iniciar localmente após preparar os pré-requisitos, com dados fictícios persistentes. Os comandos serão publicados depois de implementados e verificados.
 
-A entrega prevista terá um comando para iniciar após pré-requisitos documentados, dados fictícios persistentes e API opcional. Os comandos reais serão registrados depois de criados e verificados; não instale dependências a partir de exemplos históricos.
+O [diagnóstico](docs/ambiente/DIAGNOSTICO.md) registra as ferramentas existentes. O [plano de ambiente](docs/ambiente/PLANO-AMBIENTE.md) aguarda aprovação da instalação do Docker; não é necessário atualizar Node neste momento.
 
-## Desenvolvimento e GitHub
+## Desenvolvimento
 
-Destino: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2), público. [Primeiro commit 263c7bb](https://github.com/geovanegalan/game-vault-v2/commit/263c7bbe4578504d1f9c6b7f6fbad560a333d70e), exclusivamente documental. main/develop protegidas com PR obrigatório e verificação documental, sem força/exclusão. [Project pessoal GameVault 2.0](https://github.com/users/geovanegalan/projects/2), criado manualmente, sem ampliar escopo da CLI. [Evidências reais](docs/ambiente/EVIDENCIAS-BOOTSTRAP.md).
-
-Fluxo previsto, sem merges automáticos:
+O trabalho é acompanhado no [Project GameVault 2.0](https://github.com/users/geovanegalan/projects/2) e segue este fluxo:
 
 ```text
 feature/<tarefa> → pull request → develop
 develop         → pull request → main
 ```
 
-Todo merge será feito manualmente pelo usuário. O primeiro commit será exclusivamente documental, antes de código, conforme DEC-024. Bootstrap e configuração remota seguem o [plano GitHub](docs/ambiente/PLANO-GITHUB.md), com identidade e alcance confirmados antes de alterações.
+`main` e `develop` exigem PR e verificação documental. Todos os merges são feitos manualmente pelo responsável pelo projeto. A automação atual verifica documentação e skills; ainda não há build, testes de aplicação ou deploy. Consulte o [guia GitHub](docs/GITHUB.md).
 
-## Ambiente e verificações
+- [Backlog](docs/planejamento/BACKLOG.md) e [TASK-001](docs/tarefas/TASK-001.md): planejamento, ainda sem autorização de código.
+- [Comparação de catálogo](docs/catalogo/COMPARACAO.md): provedor real ainda não escolhido.
+- [Preparação assistida do ambiente](docs/AMBIENTE.md): diagnóstico e instalações autorizadas.
+- [Fontes consultadas](docs/FONTES.md): documentação e limites das verificações.
 
-- [Diagnóstico](docs/ambiente/DIAGNOSTICO.md): ferramentas observadas e limites das verificações.
-- [Preparação assistida](docs/AMBIENTE.md): regras para propor e executar instalações autorizadas.
-- [Plano de ambiente](docs/ambiente/PLANO-AMBIENTE.md): ferramentas existentes, única instalação proposta e verificações.
-- [Fluxo GitHub](docs/GITHUB.md): PRs, proteções, Issues, Project e Actions.
-- [Organização documental](docs/ORGANIZACAO-DOCUMENTAL.md): arquivos úteis, referências e revisão de limpeza.
+## Histórico e colaboração
 
-O workflow existente valida somente a integridade documental. Não há build/teste de produto ou deploy configurado. O verificador local Python é opcional; o comando Python encontrado falhou ao iniciar no diagnóstico. Nenhuma verificação documental comprova funcionamento da futura aplicação.
+O [contexto inicial](docs/00-contexto.md), a [entrevista](docs/entrevista/SESSOES.md) e as [evidências do bootstrap](docs/ambiente/EVIDENCIAS-BOOTSTRAP.md) preservam a origem das decisões. O [primeiro commit](https://github.com/geovanegalan/game-vault-v2/commit/263c7bbe4578504d1f9c6b7f6fbad560a333d70e) foi exclusivamente documental, antes de qualquer aplicação.
 
-## Histórico e recursos do processo
-
-- [Entrevista](docs/entrevista/SESSOES.md) e [contexto inicial](docs/00-contexto.md): origem das propostas; aprovações posteriores prevalecem sobre o estado inicial.
-- [Fontes](docs/FONTES.md): documentação consultada, datas e limites.
-- [Modelos](docs/modelos/): recursos para ADR, tarefa, revisão e preparação; não são especificações de produto vigentes.
-- [AGENTS.md](AGENTS.md) e [.agents/skills](.agents/skills/): contrato de colaboração e cinco skills locais.
-
-Próxima etapa: revisar/mesclar manualmente a evidência documental por PR, aprovar/executar A-02 do plano de ambiente e preparar a primeira tarefa de aplicação com tutoria e evidências reais. Nenhum código começou antes do primeiro commit.
+[AGENTS.md](AGENTS.md) e as [skills locais](.agents/skills/) orientam a tutoria, as aprovações e as revisões. Documentos reais substituem modelos vazios; decisões aprovadas continuam versionadas e rastreáveis.

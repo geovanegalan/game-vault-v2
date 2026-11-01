@@ -21,4 +21,17 @@ A primeira tentativa de commit/push da feature foi rejeitada pela revisão autom
 O commit inicial já havia sido publicado antes dessa rejeição; ele não foi reescrito e a sanitização dos arquivos correntes não remove dados de seu histórico. Não houve force-push ou tentativa de contornar o bloqueio; a versão reduzida será submetida novamente à revisão da execução.
 
 ## Atualização do Project manual
+Registro histórico do PR #2; a autorização posterior de CLI está em DEC-030.
 Revisão limitada à atualização documental do link/estado do Project #2 e escolha de não ampliar escopo (DEC-029). Conferência pública no navegador, sem login, de título/estados/campos/Issue #1; tipos/opções e repositório padrão não atestados. Nome de organização externa omitido dos documentos públicos; nenhuma outra organização consultada. Sem alteração em regras de produto, aplicação ou quadro remoto.
+
+## Revisão da limpeza e configuração posterior — 01/11/2026
+
+Escopo: diff local de feature/docs-organizacao-project contra develop remoto `52b2acd`; Issue #3, DEC-030/031. Revisão pelo mesmo agente com gv-code-review, não independente nem aprovação humana.
+
+Dez arquivos redundantes removidos: prompt inicial, sete modelos vazios e dois documentos preparatórios. Referências das quatro skills afetadas, AGENTS, README e verificador ajustadas. GITHUB.md consolida operação atual; STATUS, entrevista e evidências distinguem estado histórico do vigente. .gitignore existente cobre os artefatos pertinentes; documentação necessária permanece versionada.
+
+Verificações locais passaram: 29 Markdown, 27 links locais sem destino ausente, 15 documentos essenciais e cinco skills válidas; git diff --check; comparação Git confirmou produto, stack e ADRs intactos. Busca por padrões conhecidos de segredos/caminhos pessoais sem ocorrência, sem promessa de auditoria completa. Não executados localmente: script Python (alias sem interpretador) e testes de produto (aplicação inexistente). CI será conferida no PR e registrada na Issue #3.
+
+Project vinculado ao repositório; estados e opções conferidos, campos de requisito/dependências confirmados TEXT pela API. PR #2 marcado Concluída; Issue #1 permanece aberta com Docker pendente. Preferência de repositório padrão da interface não alterada; limitação explícita em GITHUB.md.
+
+Nenhum achado material restante identificado no diff revisado. Pronto para avaliação humana após conferir CI real; merge continua exclusivamente com o usuário. As remoções serão recuperáveis no histórico Git. Não houve instalação, código de aplicação, mudança de escopo ou alteração de permissões nesta limpeza.

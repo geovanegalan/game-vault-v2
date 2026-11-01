@@ -1,21 +1,54 @@
-# GitHub — operação prevista
-Destino: `https://github.com/geovanegalan/game-vault-v2.git`, público. Primeiro commit documental 263c7bb publicado; main/develop criadas e protegidas. Actions documentais passaram em ambas. Autoria no-reply e conexão GitHub/MCP verificadas. [Evidências](ambiente/EVIDENCIAS-BOOTSTRAP.md) e [plano](ambiente/PLANO-GITHUB.md). [Project pessoal GameVault 2.0](https://github.com/users/geovanegalan/projects/2) criado manualmente pelo usuário; sem ampliação de escopo da CLI. Issue #1 acompanha a preparação. Não publicar segredos ou dados pessoais desnecessários.
+# GitHub — fluxo e configuração
 
-## Branches e PRs
-- main: referência estável. develop: integração de trabalho revisado. feature/<issue-ou-task>-<resumo>: tarefa isolada criada a partir de develop.
-- PR feature → develop referencia Issue/TASK, requisitos, decisões, testes, riscos e demonstração. PR develop → main descreve a versão e sua validação.
-- Usuário revisa e executa manualmente todos os merges. Agente prepara alterações e evidências; não habilita auto-merge. Checks verdes não equivalem a aprovação humana.
-- Evitar commits diretos em main/develop depois do bootstrap. Preparação inicial de repositório vazio segue `ambiente/PLANO-GITHUB.md`, com identidade e plano concreto confirmados. A exceção cobre apenas criação e publicação inicial das branches base em repositório vazio; nunca merges. Não reescrever histórico compartilhado; combinar correção e atualização da feature com o usuário.
+Repositório público: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2). Quadro pessoal: [GameVault 2.0 / #2](https://github.com/users/geovanegalan/projects/2). Configuração corrente em 01/11/2026; histórico em [EVIDENCIAS-BOOTSTRAP](ambiente/EVIDENCIAS-BOOTSTRAP.md).
 
-## Proteção real
-AGENTS.md é instrução para o agente, não controle de acesso. Na configuração do repositório, o usuário deve conferir regras disponíveis para sua conta/plano: exigir PR em main/develop, bloquear force-push e exclusão, restringir bypass e exigir os checks realmente existentes. Revisão humana é necessária pelo processo mesmo se uma conta individual não puder aprovar seu próprio PR. Não alegar revisão obrigatória por terceiro em um projeto individual.
+## Alcance autorizado
 
-Antes de ativar uma regra, consultar a documentação atual do GitHub e testar com PR de exemplo. Não declarar proteção habilitada sem evidência da configuração. Não adicionar o nome de um check de aplicação inexistente como se já tivesse sido implementado.
+Conector GitHub verificado para este repositório; CLI usada para Git local, proteções e Project quando necessário. Após autorização concluída pelo usuário, DEC-030 permite administrar somente este repositório e o Project pessoal #2. Substitui a escolha anterior de administração manual em DEC-029; a restrição a outros repositórios, organizações e Projects permanece.
 
-## Issues e Projects
-Usar template de tarefa; uma Issue deve ligar REQ → DEC/ADR → TASK → PR → evidência. Proposta de Project editável: estados Backlog, Pronta, Em andamento, Em revisão, Concluída; campos prioridade, fase, requisito e dependências. Criar e ajustar somente com autorização. 'Concluída' exige critérios atendidos e integração manual quando necessária; trabalho local permanece indicado como tal.
+Esse limite orienta as operações do agente; não significa que a credencial OAuth da CLI esteja tecnicamente limitada a um único repositório. Não ampliar permissões por conveniência. Login ocorre no fluxo oficial; nunca enviar token, senha ou chave privada no chat. Nenhuma configuração global de Git foi alterada.
 
-Consulta pública do Project #2 confirmou os cinco estados e os quatro campos, com Issue #1 em Em andamento. Tipos/opções dos campos e repositório padrão não inspecionados. PR #2 continua aberto no repositório, mas não apareceu no quadro exibido. Alterações do Project são manuais: usuário cancelou ampliação de escopo e restringiu o trabalho ao GameVault (DEC-029). Não acessar outras organizações ou voltar a pedir project à CLI por conveniência.
+## Branches, revisão e proteção
 
-## Actions
-O workflow fornecido valida somente integridade do bootstrap e presença das cinco skills. Sem aplicação aprovada, não há build, lint, testes de produto ou deploy. Após escolher stack e estrutura, propor CI apropriada e atualizar nomes de checks nas regras. Nunca substituir testes reais por um job sempre verde; declarar verificações não executadas. Não há publicação nem deploy neste workflow.
+- `main`: referência estável; `develop`: integração de trabalho revisado.
+- Criar `feature/<issue-ou-task>-<resumo>` a partir de `develop`, preservando alterações locais.
+- PR de feature para develop liga Issue/TASK, REQ, DEC/ADR, evidências, riscos e verificações. PR de develop para main descreve uma versão revisada.
+- Todos os merges são manuais pelo usuário. Não executar merge, auto-merge, force-push ou push direto nas bases. O bootstrap vazio já terminou.
+
+Proteções verificadas no bootstrap em ambas as bases: PR obrigatório, check **Integridade do kit (sem testes de produto)** obrigatório, branch atualizada, conversas resolvidas, administradores incluídos, bloqueio de força/exclusão. Auto-merge desabilitado. A contagem de aprovações obrigatórias é zero por ser um projeto individual; revisão e merge manuais continuam exigidos pelo processo.
+
+AGENTS.md é contrato de colaboração, não controle técnico de acesso. Antes de mudar proteções, consultar fontes oficiais, apresentar a mudança concreta e obter autorização. Preservar o nome do check enquanto ele for exigido pelas regras; não exigir checks de aplicação inexistentes.
+
+## Project
+
+Criado manualmente pelo usuário, posteriormente configurado pela CLI sob DEC-030. Vínculo ao repositório confirmado pela API; título e visibilidade pública preservados. Descrição e README do quadro explicam o fluxo.
+
+| Status | Quando usar |
+| --- | --- |
+| Backlog | Proposta ainda não autorizada |
+| Pronta | Tarefa aprovada, critérios e dependências claros |
+| Em andamento | Execução autorizada em curso |
+| Em revisão | PR/evidências disponíveis, aguardando revisão e merge manual |
+| Concluída | Critérios atendidos e integração manual realizada quando aplicável |
+
+Campos conferidos pela CLI: **Prioridade** (Alta, Média, Baixa), **Fase** (Documentação, Ambiente, Implementação, Revisão), **Requisito** e **Dependências**. Os dois últimos são campos de texto. Não foi necessário recriar campos ou opções.
+
+- Issue #1 / TASK-000: Em andamento; Docker A-02 aguarda aprovação e verificação.
+- PR #2: Concluída; merge manual do usuário confirmado em develop, commit `52b2acd`.
+- Issue #3: limpeza documental e configuração deste Project; permanece aberta até integração manual.
+
+O vínculo ao repositório foi configurado. A preferência de repositório padrão para criar Issues pela interface não foi alterada: a CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações usam sempre o destino explícito; isso não bloqueia o quadro. Views e automações da interface não foram alteradas ou atestadas.
+
+## Issues e Actions
+
+Uma Issue deve ligar REQ → DEC/ADR → TASK → PR → evidência. A existência no quadro não autoriza implementação. Criar tarefas de aplicação somente após refinamento/aprovação correspondentes.
+
+O workflow [bootstrap.yml](../.github/workflows/bootstrap.yml) executa [validar_kit.py](../scripts/validar_kit.py): presença/conteúdo dos documentos essenciais e metadados das cinco skills. Python executa no runner GitHub; o comando local foi diagnosticado como alias sem interpretador. Não instalar Python apenas para esta verificação.
+
+CI significa verificação automática de alterações. A atual é documental; não comprova funcionamento da futura aplicação. Build, lint, testes de produto e eventual entrega terão propostas próprias. Nenhum deploy configurado ou autorizado.
+
+## Recuperação e histórico
+
+As remoções documentais permanecem recuperáveis no histórico Git. Não reescrever histórico compartilhado para limpar apresentação. A operação antes descrita em PLANO-GITHUB v0.1/v0.2 foi executada e consolidada neste guia e nas evidências; suas versões anteriores permanecem nos commits do bootstrap.
+
+Fontes: [CLI: vincular Project](https://cli.github.com/manual/gh_project_link), [CLI: editar campos de cartão](https://cli.github.com/manual/gh_project_item-edit), [proteção de branches](https://docs.github.com/en/rest/branches/branch-protection#update-branch-protection).

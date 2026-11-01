@@ -19,3 +19,6 @@ Documentação pronta para avaliação humana do PR de evidências, com instala�
 A primeira tentativa de commit/push da feature foi rejeitada pela revisão automática por possível exposição de detalhes do ambiente local. Nenhum comando daquela tentativa executou. Foram removidos caminhos pessoais, métricas de hardware, build/kernel do host e referências absolutas ao legado; mantidas somente versões e condições necessárias ao plano. Busca local confirmou ausência desses padrões e do email pessoal nos Markdown correntes; sem padrão conhecido de segredo encontrado.
 
 O commit inicial já havia sido publicado antes dessa rejeição; ele não foi reescrito e a sanitização dos arquivos correntes não remove dados de seu histórico. Não houve force-push ou tentativa de contornar o bloqueio; a versão reduzida será submetida novamente à revisão da execução.
+
+## Atualização do Project manual
+Revisão limitada à atualização documental do link/estado do Project #2 e escolha de não ampliar escopo (DEC-029). Conferência pública no navegador, sem login, de título/estados/campos/Issue #1; tipos/opções e repositório padrão não atestados. Nome de organização externa omitido dos documentos públicos; nenhuma outra organização consultada. Sem alteração em regras de produto, aplicação ou quadro remoto.

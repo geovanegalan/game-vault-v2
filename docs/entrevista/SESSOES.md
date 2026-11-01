@@ -218,4 +218,11 @@ Issue #1 aberta para TASK-000. Feature docs-bootstrap-evidencias criada de devel
 
 Project não criado: CLI sem read:project; gerenciamento exige project. Não foi ampliada permissão automaticamente. Opções: usuário autoriza via fluxo oficial de gh auth refresh --hostname github.com --scopes project, ou cria Project manualmente. Docker A-02 também continua pendente de aprovação específica; nenhum instalador foi executado. Ficam separadas conclusão do primeiro commit, preparação ainda parcial do ambiente e integração manual das evidências.
 
+### Project manual e limite de acesso — atualização de 01/11/2026
+O usuário cancelou a autorização adicional e escolheu criação/configuração manual, sem acessar outras organizações/projetos. Decisão operacional DEC-029; não voltar a solicitar escopo project por conveniência. Esta escolha substitui a alternativa anterior de ampliar credenciais da CLI; não reduz ou altera automaticamente permissões antigas da conta.
+
+Link fornecido pelo usuário: https://github.com/users/geovanegalan/projects/2. Consulta pública por pesquisa não carregou a página dinâmica; navegador em segundo plano, sem login, permitiu leitura somente do Project indicado. Confirmados: título GameVault 2.0, estados Backlog/Pronta/Em andamento/Em revisão/Concluída; campos Prioridade/Fase/Requisito/Dependências; Issue #1 em Em andamento. Tipos/opções de campos e repositório padrão não conferidos. PR #2 não apareceu no quadro; consulta de metadados no próprio repositório confirmou que continua aberto, sem merge.
+
+Nenhuma alteração no quadro, login, escopo ou consulta a outra organização. Atualizados README, STATUS, evidências e plano GitHub v0.2 para registrar o resultado sem alegar configuração completa. Docker A-02 e TASK-001 continuam pendentes das respectivas autorizações.
+
 Para cada sessão registre: data; perguntas; respostas fiéis; fatos observados no legado com arquivo/trecho; hipóteses separadas; recomendações e tradeoffs; dúvidas; propostas de decisão com IDs; próximo bloco. Não use dados pessoais reais desnecessários.

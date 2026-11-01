@@ -17,8 +17,8 @@ Issue: [TASK-000 / #1](https://github.com/geovanegalan/game-vault-v2/issues/1)
 Atualizações de evidência seguem feature/docs-bootstrap-evidencias, criada a partir de develop. O PR desta feature tem base develop e serve como primeiro exercício do fluxo protegido; nenhum merge será executado pelo agente. Não houve tentativa de push direto proibido nas bases como teste.
 
 ## Pendências reais
-- Project não criado. A consulta pela CLI falhou por falta de read:project; o comando gh project informa que gerenciamento exige escopo project. Não foi tentado ampliar a credencial automaticamente.
-- Se o usuário optar por autorizar, executar em seu terminal `gh auth refresh --hostname github.com --scopes project` e concluir o login oficial. Isso concede à CLI acesso de gerenciamento a Projects da conta; o agente limitará uso ao GameVault. Alternativa: criar/configurar o Project manualmente, mantendo estados/campos do plano GitHub. Não enviar token no chat.
+- Project criado manualmente pelo usuário: [GameVault 2.0 #2](https://github.com/users/geovanegalan/projects/2). Usuário cancelou autorização adicional; não ampliar escopo da CLI ou consultar outras organizações.
+- Conferência pública sem login: cinco estados e campos Prioridade/Fase/Requisito/Dependências presentes; Issue #1 em Em andamento. PR #2 não apareceu no quadro; tipos/opções dos campos e repositório padrão ainda não conferidos. A criação deixou de ser pendência, mas não foi afirmada configuração completa.
 - Docker não instalado: item A-02 de PLANO-AMBIENTE v0.1 aguarda aprovação concreta, embora a stack já esteja aprovada.
 - TASK-001 e demais tarefas de aplicação não executadas/autorizadas por existirem no backlog. Nenhuma dependência local, banco do projeto, migração ou contêiner de aplicação criado.
 - Revisão humana/merge da evidência documental continua com o usuário; Issue #1 permanece aberta enquanto houver critérios pendentes.

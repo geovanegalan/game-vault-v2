@@ -2,7 +2,7 @@
 
 Biblioteca de jogos e comunidade baseada em avaliações públicas e amizades. Projeto de portfólio desenvolvido do zero com **Spec-Driven Development**: especificar o comportamento, revisar decisões, implementar tarefas autorizadas e registrar evidências.
 
-> **Estado atual:** produto, stack e arquitetura aprovados; primeiro commit documental publicado, main/develop protegidas e CI documental passou. Instalação Docker e Project pendentes. Ainda não existe aplicação para executar. Consulte [STATUS](docs/STATUS.md).
+> **Estado atual:** produto, stack e arquitetura aprovados; primeiro commit documental publicado, main/develop protegidas e CI documental passou. Project criado manualmente; instalação Docker pendente. Ainda não existe aplicação para executar. Consulte [STATUS](docs/STATUS.md).
 
 ## Produto planejado
 
@@ -45,7 +45,7 @@ A entrega prevista terá um comando para iniciar após pré-requisitos documenta
 
 ## Desenvolvimento e GitHub
 
-Destino: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2), público. [Primeiro commit 263c7bb](https://github.com/geovanegalan/game-vault-v2/commit/263c7bbe4578504d1f9c6b7f6fbad560a333d70e), exclusivamente documental. main/develop protegidas com PR obrigatório e verificação documental, sem força/exclusão. [Evidências reais](docs/ambiente/EVIDENCIAS-BOOTSTRAP.md); Project ainda pendente por autorização de escopo.
+Destino: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2), público. [Primeiro commit 263c7bb](https://github.com/geovanegalan/game-vault-v2/commit/263c7bbe4578504d1f9c6b7f6fbad560a333d70e), exclusivamente documental. main/develop protegidas com PR obrigatório e verificação documental, sem força/exclusão. [Project pessoal GameVault 2.0](https://github.com/users/geovanegalan/projects/2), criado manualmente, sem ampliar escopo da CLI. [Evidências reais](docs/ambiente/EVIDENCIAS-BOOTSTRAP.md).
 
 Fluxo previsto, sem merges automáticos:
 

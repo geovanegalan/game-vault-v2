@@ -1,0 +1,16 @@
+name: Bootstrap documental
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+permissions:
+  contents: read
+jobs:
+  validar-kit:
+    name: Integridade do kit (sem testes de produto)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar bootstrap
+        run: python3 scripts/validar_kit.py

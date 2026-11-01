@@ -56,8 +56,8 @@ Sem link disponível; mensagem nesta sessão do Codex: “Aprovo a stack recomen
 
 Na resposta à confirmação de autoria, o usuário escolheu “Usar email no-reply do GitHub”, mantendo nome Geovane conforme a pergunta. Conta/ID públicos consultados: geovanegalan / 144388433. Endereço no-reply conforme formato oficial: 144388433+geovanegalan@users.noreply.github.com; configurar somente local ao repositório, sem mudar Git global. Isso completa a pendência de identidade de DEC-024.
 
-## Plano de instalação pendente
-PLANO-AMBIENTE v0.1, item A-02: Docker Desktop 4.97.0, método/impacto/recuperação e validação documentados. Sem mensagem de aprovação desse item concreto; stack aprovada não foi usada como autorização de instalar o programa. Node/npm/WSL e PostgreSQL nativo preservados. Não atribuir aprovação ao usuário antes da resposta.
+## Plano de instalação — estado histórico anterior a DEC-032
+PLANO-AMBIENTE v0.1, item A-02: Docker Desktop 4.97.0, método/impacto/recuperação e validação documentados. Naquele momento não havia mensagem de aprovação desse item concreto; stack aprovada não foi usada como autorização de instalar o programa. Node/npm/WSL e PostgreSQL nativo preservados. Pendência resolvida somente pela aprovação explícita posterior em DEC-032.
 
 ## Evidência complementar de DEC-001 — 01/11/2026
 Na resposta ao segundo bloco desta mesma sessão do Codex, sem link disponível, o usuário reafirmou: “Só pra confirmar, o meu primeiro projeto é só pra contexto, ok? Ter uma base de pra onde vamos, mas vamos fazer do zero etc.” Confirma a direção já registrada, sem mudança material e sem aprovar importação de código, requisitos, dados, design ou stack do legado. Não substitui o registro original.
@@ -74,3 +74,13 @@ Autor: usuário (Geovane). Mensagem imediatamente posterior à confirmação de 
 > “Quero também limpar o repositório como falei, excluir pastas e arquivos desnecessários (como o /prompts) e demais que você ache desnecessários, tem uns models que eu achei meio nada a ver, da uma olhada nas pasta /docs e julgue o que é necessário e desnecessário, pode excluir e dar commit pra adicionar. Pode editar arquivos também caso seja necessário. Também, caso fique sobrando arquivos que não possa excluir, seria possível adicionar no gitignore? se sim, faça. Deixar o repositório mais clean e apresentável no github.”
 
 Consequências: removidos sete modelos vazios, prompt inicial superado e dois documentos preparatórios redundantes; conteúdo operacional útil consolidado em GITHUB.md/STATUS.md e evidências. Skills e verificador passam a usar documentos reais. .gitignore existente já cobre segredos e artefatos gerados; nenhum documento necessário foi ocultado. Histórico preservado no Git; mudança normativa de produto não autorizada nem realizada.
+
+## DEC-032 — PLANO-AMBIENTE v0.1, item A-02 aprovado
+
+- Estado: aprovada. Autor: usuário (Geovane). Data: 01/11/2026.
+- Artefato/versão e alcance exato: item A-02 do plano de ambiente v0.1, Docker Desktop 4.97.0 para Windows x86_64 por usuário, backend WSL 2; download oficial, conferência SHA-256/assinatura e validação Docker/Compose/motor com contêiner descartável, sem montagem de dados pessoais. Preservar PostgreSQL atual. Não autoriza aplicação, migrações, pagamentos, instalação global de CLIs ou merge pelo agente.
+- Evidência recuperável: mensagem desta sessão Codex imediatamente posterior à apresentação das alternativas de preparar/adiar Docker; sem link disponível. Transcrição integral: “Aprovo o item A-02 do plano de ambiente v0.1. Pode baixar, instalar e validar o Docker conforme o plano, preservando meu PostgreSQL atual.”
+- Justificativa/alternativa: usuário escolheu preparar Docker agora, em vez de adiá-lo até banco/Compose. Não muda stack ou escopo de produto.
+- Impactos/limites: executa apenas A-02 já apresentado. Termos são conduzidos pelo usuário. Se houver exigência de privilégio, reinício, versão diferente ou alteração de recursos Windows, interromper a parte afetada e apresentar o novo alcance. Nenhuma autorização de TASK-001 inferida. Complementa DEC-025/026/027; substitui a pendência de aprovação de A-02, preservando seu histórico.
+- Resultado: instalador saída 0; hash/assinatura válidos, Docker Desktop 4.97.0.244584 por usuário/WSL 2, CLI/motor 29.9.2 e Compose v5.6.1. Hello-world executou com código 0 e remoção automática confirmada. PostgreSQL Running/Automatic antes/depois; sem acesso a dados/credenciais. Evidências em ambiente/EVIDENCIAS-DOCKER.md e STATUS.md. Critérios A-02 passaram; não é validação da aplicação.
+- Participação posterior: usuário respondeu à pergunta sobre primeira abertura, nesta mesma sessão/data, “Aceitei e cheguei à tela principal”. Termos não aceitos pelo agente. Sem exigência observada de reinício, elevação adicional ou alteração de recursos Windows nesta execução.

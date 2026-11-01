@@ -40,7 +40,7 @@ A [comparação de stack](docs/COMPARACAO-STACK.md) registra alternativas e cons
 
 Ainda não há comando de execução nem contas de demonstração disponíveis. A entrega planejada permitirá iniciar localmente após preparar os pré-requisitos, com dados fictícios persistentes. Os comandos serão publicados depois de implementados e verificados.
 
-O [diagnóstico](docs/ambiente/DIAGNOSTICO.md) registra as ferramentas existentes. O [plano de ambiente](docs/ambiente/PLANO-AMBIENTE.md) aguarda aprovação da instalação do Docker; não é necessário atualizar Node neste momento.
+O [diagnóstico](docs/ambiente/DIAGNOSTICO.md) registra as ferramentas existentes. O Docker foi instalado conforme o [plano de ambiente](docs/ambiente/PLANO-AMBIENTE.md), com motor e contêiner de diagnóstico verificados; veja as [evidências](docs/ambiente/EVIDENCIAS-DOCKER.md). Não é necessário atualizar Node neste momento.
 
 ## Desenvolvimento
 

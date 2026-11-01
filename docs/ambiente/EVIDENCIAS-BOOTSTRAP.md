@@ -38,3 +38,7 @@ O primeiro push de atualização das evidências foi bloqueado pela revisão aut
 - Plano GitHub executado consolidado em ../GITHUB.md. Para recuperar PLANO-GITHUB v0.2 e a revisão inicial de organização, consultar os arquivos no commit `b02a39be6e6291c46a28367f340785bf0ab6c6a7` do PR #2. A remoção da árvore corrente não apaga o histórico.
 - A preferência de repositório padrão da interface, views e automações não foram alteradas. Detalhes e limites correntes em ../GITHUB.md. Nenhum outro repositório/organização consultado nesta configuração.
 - Docker A-02 e autorização da TASK-001 continuam pendentes; nenhuma instalação ou aplicação criada.
+
+## Atualização após aprovação de A-02
+
+O estado da seção anterior é histórico. Em DEC-032, usuário aprovou a instalação Docker A-02. Docker Desktop instalado por usuário/WSL 2, motor/Compose e contêiner descartável verificados, com PostgreSQL nativo preservado conforme observações antes/depois. Detalhes em [EVIDENCIAS-DOCKER](EVIDENCIAS-DOCKER.md). TASK-001 permanece proposta, sem autorização ou aplicação criada.

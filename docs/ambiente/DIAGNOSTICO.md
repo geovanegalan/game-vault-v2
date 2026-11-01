@@ -23,7 +23,7 @@ Atualizado em 01/11/2026 — preparação após aprovação da stack/ADRs. Vers�
 - Autoria local confirmada pelo usuário: Geovane e email no-reply correspondente ao ID/login público. Configuração global não alterada; email pessoal não incluído nos documentos.
 - Remoto geovanegalan/game-vault-v2 confirmado público e branches=[]; API/CLI com permissões admin/push. Revalidado antes do bootstrap. Nenhum histórico remoto foi sobrescrito.
 - Conexão MCP e CLI verificadas separadamente; operações não oferecidas pelo conector usam CLI quando autorizadas.
-- Resultados de publicação/proteções/recursos serão registrados em STATUS/PLANO-GITHUB após execução, sem afirmar antecipadamente.
+- Resultados de publicação/proteções/recursos registrados em ../STATUS.md e EVIDENCIAS-BOOTSTRAP.md após execução.
 
 ## Verificações e limites
 - Consultas CIM/WSL/winget inicialmente bloqueadas; repetidas com permissão apropriada, retornaram resultados acima. Nenhuma ampliação de rede ou mudança de permissões de máquina executada por contorno.
@@ -35,9 +35,9 @@ Atualizado em 01/11/2026 — preparação após aprovação da stack/ADRs. Vers�
 ## Plano e histórico
 - Produto DEC-023; stack/ADRs DEC-025/026/027 aprovados.
 - Plano concreto PLANO-AMBIENTE v0.1 propõe somente Docker Desktop 4.97.0 nesta etapa; aguardando aprovação de instalação.
-- PLANO-GITHUB v0.1 rege bootstrap documental, identidade e proteções; primeiro commit antes do código, conforme DEC-024.
+- O plano GitHub de bootstrap foi executado; operação corrente consolidada em ../GITHUB.md e evidências em EVIDENCIAS-BOOTSTRAP.md. Primeiro commit antes do código, conforme DEC-024.
 - O diagnóstico inicial não conhecia WSL/PostgreSQL nativo e não tinha conexão MCP; a coleta atual acrescenta esses fatos, sem fingir que já estavam verificados.
 - Nenhuma instalação/atualização foi executada. Ambiente completo da aplicação ainda não foi validado.
 
 ## Resultado posterior ao primeiro commit
-Commit documental 263c7bb publicado; main/develop protegidas e CI documental passou em ambas. GitHub/MCP verificado; Issue #1 aberta. Resultados/URLs em EVIDENCIAS-BOOTSTRAP.md. Project pendente por falta de escopo da CLI. A instalação Docker permanece pendente de aceite A-02; nenhuma mudança em WSL, Node/npm ou banco nativo.
+Commit documental 263c7bb publicado; main/develop protegidas e CI documental passou em ambas. GitHub/MCP verificado; Issue #1 aberta. Resultados/URLs em EVIDENCIAS-BOOTSTRAP.md. Após autorização explícita posterior (DEC-030), CLI confirmou o Project pessoal #2 e seu vínculo ao GameVault; configuração descrita em ../GITHUB.md. A instalação Docker permanece pendente de aceite A-02; nenhuma mudança em WSL, Node/npm ou banco nativo.

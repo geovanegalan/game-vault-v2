@@ -35,4 +35,4 @@ Abra o SKILL.md correspondente quando o trabalho se enquadrar:
 - `.agents/skills/gv-implementacao-guiada/SKILL.md`: tarefa de código autorizada.
 - `.agents/skills/gv-code-review/SKILL.md`: revisão de mudanças.
 
-Modelos ficam em `docs/modelos/`. Eles orientam a escrita, não constituem requisitos aprovados. Atualize `docs/STATUS.md` ao encerrar um marco para permitir retomada em outro chat.
+Use os documentos de trabalho existentes como referência de estrutura, preservando versões e aprovações; não é necessário manter modelos vazios. Atualize `docs/STATUS.md` ao encerrar um marco para permitir retomada em outro chat.

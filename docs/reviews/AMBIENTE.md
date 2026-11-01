@@ -17,3 +17,9 @@ Nenhum achado material restante identificado no conteúdo revisado. Evidência d
 Conferência local passou: 31 Markdown, 32 links locais sem destino ausente, 15 documentos essenciais presentes, cinco skills válidas e git diff --check. Produto, comparação de stack, ADRs e skills sem alterações nesta tarefa. Busca por padrões conhecidos de segredos/caminhos pessoais sem ocorrência; não equivale a auditoria completa. Python local não executado (alias sem interpretador); CI real será conferida no PR.
 
 Pronto para avaliação humana após conferir CI do commit de entrega. Integração por PR para develop, com merge exclusivamente manual do usuário. A-02 passou; essa conclusão não significa aplicação pronta ou autorização de TASK-001.
+
+## Conferência após integração e pausa
+
+Em 01/11/2026, API confirmou PR #6 integrado pelo usuário em develop, commit e4dbe80898825c78904c8e6636ef7af13c176a4f, com head revisado cf54af4 (um commit/nove arquivos). CI do PR (41356526771) e do commit após merge (41357772653) passaram. Cartão concluído; nenhuma ampliação do diff de entrega identificada. Main permanece na promoção documental anterior, sem as evidências Docker desta etapa.
+
+Usuário solicitou encerrar a sessão e salvar retomada. Checkpoint em ../STATUS.md, na feature/docs-retomada-sessao, sem iniciar TASK-001 ou abrir nova promoção. Próxima sessão depende de retomada do usuário e aprovação concreta da primeira tarefa de aplicação.

@@ -33,10 +33,11 @@ Criado manualmente pelo usuário, posteriormente configurado pela CLI sob DEC-03
 
 Campos conferidos pela CLI: **Prioridade** (Alta, Média, Baixa), **Fase** (Documentação, Ambiente, Implementação, Revisão), **Requisito** e **Dependências**. Os dois últimos são campos de texto. Não foi necessário recriar campos ou opções.
 
-- Issue #1 / TASK-000: acompanha preparação e integração das evidências; Docker A-02 aprovado em DEC-032, instalado e verificado. Revisão/merge manual das evidências da feature/ambiente-preparacao ainda necessários para encerrar essa entrega.
+- Issue #1 / TASK-000: fechada; Docker A-02 aprovado em DEC-032, instalado e verificado, com evidências integradas em develop pelo PR #6.
 - PR #2: Concluída; merge manual do usuário confirmado em develop, commit `52b2acd`.
 - Issue #3: limpeza documental integrada em develop pelo PR #4; Issue fechada pelo usuário e cartões concluídos.
 - PR #5: Concluída; promoção develop → main mesclada pelo usuário, commit `76df4ff`. CI em main passou (execução 41355086123); conteúdo das duas bases idêntico após promoção.
+- PR #6: Concluída; evidências Docker mescladas pelo usuário em develop, commit `e4dbe80`; CI desse commit passou (execução 41357772653). Após essa nova entrega, main ainda não contém as evidências Docker; promoção futura segue por PR e merge manual.
 
 O vínculo ao repositório foi configurado. A preferência de repositório padrão para criar Issues pela interface não foi alterada: a CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações usam sempre o destino explícito; isso não bloqueia o quadro. Views e automações da interface não foram alteradas ou atestadas.
 

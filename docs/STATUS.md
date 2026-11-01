@@ -1,40 +1,39 @@
 # Ponto de retomada
 
-Atualizado em 01/11/2026 — documentação revisada em main; Docker A-02 instalado e critérios de validação passaram, antes de código.
+Sessão encerrada a pedido do usuário em 01/11/2026. Evidência nesta sessão Codex, sem link disponível: “Fiz o merge. Avalie e vamos parar por aqui. Salve o que fazemos até agora, na próxima sessão continuamos.” Aguardar o usuário retomar; não iniciar novas tarefas automaticamente.
 
-## Aprovações e limites
+## Onde paramos
 
-- Produto: VISAO v0.3, PRD v0.6, MVP v0.6 e P-01 a P-06 — DEC-023.
-- Stack: COMPARACAO-STACK v0.1 — DEC-025; ADR-001/002 v0.1 — DEC-026/027.
-- BACKLOG v0.1 é proposta; TASK-001 ainda não autorizada. Nenhuma aplicação, dependência de produto, migração ou teste de produto criado/executado.
-- DEC-030 autoriza CLI somente para o repositório GameVault e Project pessoal #2; substitui a administração manual de DEC-029. Nenhum outro repositório/organização consultado.
-- DEC-031 autoriza limpeza documental, ajustes e commit. Todos os merges continuam manuais pelo usuário; nenhum push direto futuro em main/develop, força ou auto-merge permitido.
-- DEC-032 aprova PLANO-AMBIENTE v0.1, item A-02: baixar, instalar por usuário/WSL 2 e validar Docker Desktop 4.97.0, preservando PostgreSQL. Aprovação não inclui TASK-001 ou mudanças adicionais no Windows.
+- Produto aprovado: VISAO v0.3, PRD v0.6, MVP v0.6 e complementos P-01 a P-06 — DEC-023.
+- Stack aprovada: COMPARACAO-STACK v0.1 — DEC-025; arquitetura ADR-001/002 v0.1 — DEC-026/027.
+- Docker A-02 do PLANO-AMBIENTE v0.1 aprovado em DEC-032, instalado e validado. Usuário conduziu o aceite dos termos. Evidências revisadas no PR #6, já integrado em develop.
+- BACKLOG v0.1 e TASK-001 v0.1 continuam propostas. Nenhuma aplicação, dependência de produto, banco do projeto, migração ou teste de produto criado/executado. Aprovar stack e preparar ambiente não autoriza TASK-001.
 
-## GitHub e Project
+## GitHub e integração conferida
 
-- Repositório público: [game-vault-v2](https://github.com/geovanegalan/game-vault-v2). Autoria local Geovane/no-reply; configuração global preservada.
-- Primeiro commit exclusivamente documental: `263c7bb`; main/develop protegidas com PR/check documental, branch atualizada, conversas resolvidas, administradores incluídos e força/exclusão bloqueadas. Auto-merge false. CI passou nas bases no bootstrap.
-- [PR #2](https://github.com/geovanegalan/game-vault-v2/pull/2) e [PR #4](https://github.com/geovanegalan/game-vault-v2/pull/4) mesclados manualmente pelo usuário em develop. [PR #5](https://github.com/geovanegalan/game-vault-v2/pull/5) promoveu os documentos para main, commit `76df4ff81e5d3bf9855e361dfe8620679f390c01`; merge confirmado pela API. Conteúdo de main/develop idêntico após a promoção; hashes distintos pelo commit de merge.
-- [CI do commit integrado em main](https://github.com/geovanegalan/game-vault-v2/actions/runs/41355086123) concluída com success. CI em develop após PR #4 também passou: execução 41354704571. Verificações exclusivamente documentais.
-- [Project GameVault 2.0 #2](https://github.com/users/geovanegalan/projects/2) vinculado ao repositório; descrição/README configurados e estados/opções conferidos. Issue #1 acompanha esta preparação; Issue #3 fechada e cartões dos PRs #2/#4/#5 concluídos. Feature/ambiente-preparacao contém retomada e evidências A-02; a instalação foi autorizada por DEC-032, não pela criação da branch.
-- Repositório padrão para criação pela interface, views e automações não alterados/atestados. CLI usa destino explícito. Ver [guia GitHub](GITHUB.md) e [evidências](ambiente/EVIDENCIAS-BOOTSTRAP.md).
+- Repositório público: [game-vault-v2](https://github.com/geovanegalan/game-vault-v2). Project: [GameVault 2.0 #2](https://github.com/users/geovanegalan/projects/2). Autoria local Geovane/no-reply; configuração global de Git preservada.
+- PRs #2 e #4 integraram evidências/limpeza em develop; [PR #5](https://github.com/geovanegalan/game-vault-v2/pull/5) promoveu essa documentação para main. Prompts e sete modelos vazios removidos; requisitos, decisões, entrevista e evidências úteis preservados.
+- [PR #6](https://github.com/geovanegalan/game-vault-v2/pull/6) mesclado manualmente pelo usuário em develop; API confirmou merged=true, commit `e4dbe80898825c78904c8e6636ef7af13c176a4f`. Head revisado `cf54af4`, um commit e nove arquivos documentais; sem alteração posterior de escopo identificada.
+- [CI após merge em develop](https://github.com/geovanegalan/game-vault-v2/actions/runs/41357772653) passou. [CI do PR #6](https://github.com/geovanegalan/game-vault-v2/actions/runs/41356526771) também passou, incluindo execução real do verificador documental. Essas execuções não testam aplicação.
+- main está em `76df4ff` (PR #5); develop em `e4dbe80` (PR #6). Diferença esperada: nove arquivos documentais da preparação Docker. Ainda não foi aberto PR de promoção dessa etapa para main.
+- Issues #1 e #3 fechadas; cartões dos PRs #2/#4/#5/#6 e das Issues concluídos. Configurações da interface do Project não atestadas: repositório padrão para criar Issues, views e automações. CLI usa sempre destino explícito.
+- main/develop protegidas com PR/check documental, branch atualizada, conversas resolvidas, administradores incluídos e força/exclusão bloqueadas; auto-merge false na conferência do bootstrap. Todos os merges foram feitos pelo usuário.
+- Este ponto de retomada é salvo na feature/docs-retomada-sessao, criada do develop remoto após PR #6. Ainda não integrado nas bases; não há necessidade de novo merge para encerrar esta sessão. Continuar pelo fluxo de PR quando o trabalho for retomado.
 
-## Limpeza documental
+## Ambiente verificado
 
-- Removidos dez arquivos redundantes: prompt inicial, sete modelos vazios, organização documental antiga e plano GitHub já executado. Operação consolidada em GITHUB.md, STATUS e evidências; versões anteriores recuperáveis no Git.
-- Mantidos requisitos aprovados, ADRs, decisões, entrevista, diagnóstico/plano de instalação, fontes, backlog e tarefa proposta, skills e templates Issue/PR. São documentação do projeto e devem continuar versionados.
-- README simplificado; quatro skills e verificador ajustados para documentos reais. .gitignore já cobre .env, dependências, builds, cobertura, logs e caches existentes; nenhum documento necessário ocultado.
-- Conferência local da limpeza passou: 29 Markdown, 27 links locais válidos, 15 documentos essenciais presentes e cinco skills com metadados válidos; git diff --check passou. Produto/stack/ADRs sem alterações. Busca por padrões conhecidos de segredos/caminhos pessoais sem ocorrência; não equivale a auditoria completa. Script Python não executado localmente; CI real passou na feature (41354362994), na promoção (41354992802) e nas bases após merges. Evidências de integração também na Issue #3. CI documental não comprova comportamento da aplicação.
-- Histórico inicial já público não reescrito; a minimização posterior de detalhes do host não remove dados de commits antigos. Ver reviews/BOOTSTRAP.md.
+- Docker Desktop 4.97.0.244584 por usuário, backend WSL 2. Instalador oficial com SHA-256/assinatura válidos e saída 0. CLI/motor 29.9.2, Compose v5.6.1, endpoint local e PATH registrado conferidos.
+- hello-world executado por digest, com saída 0, sem rede/montagens/portas; remoção automática do contêiner confirmada. Instalador/checksum temporários próprios removidos; imagem de diagnóstico permanece no cache.
+- PostgreSQL 18.3 nativo observado Running/Automatic antes e depois. Nenhuma conexão a dados/credenciais, parada, atualização ou reconfiguração realizada. WSL 3.0.3 e Node 24.21.0/npm efetivo 12.0.2 preservados; sem necessidade comprovada de atualização.
+- Terminais/aplicativos anteriores à instalação podem precisar de reabertura para carregar PATH. Python local é alias sem interpretador; não instalar apenas para o kit. Ver [evidências Docker](ambiente/EVIDENCIAS-DOCKER.md) e [revisão](reviews/AMBIENTE.md).
 
-## Ambiente e próximos passos
+## Próxima sessão
 
-- Node 24.21.0 e npm efetivo 12.0.2 compatíveis documentalmente, sem atualização necessária. Windows x64/WSL 2 disponíveis; PostgreSQL 18.3 nativo preservado, sem acesso a dados/credenciais.
-- A-02 de [PLANO-AMBIENTE v0.1](ambiente/PLANO-AMBIENTE.md) aprovado em DEC-032. Docker Desktop 4.97.0.244584 instalado por usuário/WSL 2 (saída 0), SHA-256/assinatura válidos. Docker CLI/motor 29.9.2, Compose v5.6.1, backend e PATH registrado conferidos; hello-world por digest executou com código 0, sem rede/montagens/portas, e remoção automática confirmada. PostgreSQL nativo observado Running/Automatic antes e depois, sem conexão a dados ou leitura de credenciais. Evidências em [EVIDENCIAS-DOCKER](ambiente/EVIDENCIAS-DOCKER.md).
-- Python local é alias sem interpretador; CI executa o script no GitHub. Não instalar apenas para o kit.
-- Documentação e limpeza já integradas em main pelos merges manuais; não abrir outro PR apenas para repetir esta promoção. Rascunhos de retomada serão incluídos na próxima entrega de ambiente/planejamento pelo fluxo normal.
-- Antes da instalação: Docker ausente no PATH e nos dois locais padrão; requisitos básicos observados atendidos. Release oficial 4.97.0 e instalação por usuário/backend WSL 2 reconfirmadas. Nenhuma alteração de recursos Windows por inferência foi executada.
-- Usuário escolheu preparar Docker agora em DEC-032 e confirmou aceite dos termos na primeira abertura. Critérios A-02 passaram; artefatos temporários próprios removidos, imagem de diagnóstico mantida no cache. Nenhuma aplicação/banco de projeto criada. Terminais antigos podem exigir reabertura para carregar PATH.
-- Entregar evidências por PR de feature/ambiente-preparacao para develop, com revisão e merge manuais; Issue #1 permanece em acompanhamento até essa integração. Próximo marco: detalhar versões estáveis exatas e obter autorização de TASK-001 antes de iniciar código.
-- Provedor real do catálogo, parâmetros de senha/sessão e versões exatas de dependências continuam para refinamento nas tarefas correspondentes.
+1. Ler AGENTS.md, 00-contexto.md, este STATUS e decisoes/REGISTRO.md. Conferir branch, alterações locais e remoto antes de editar; preservar este checkpoint e eventuais mudanças do usuário.
+2. Retomar gv-planejamento/gv-ambiente para detalhar TASK-001: versões exatas estáveis, compatibilidade, geradores/comandos oficiais, arquivos previstos, critérios de aceite e validação. Explicar objetivo e escolhas ao usuário, iniciante em Angular/NestJS e com experiência prévia em Jest.
+3. Apresentar a proposta concreta e aguardar autorização explícita da tarefa antes de gerar aplicação ou instalar dependências. Tutoria continua em cada fase; não implementar sugestões por iniciativa própria.
+4. Integrar o checkpoint documental pelo fluxo normal e preparar a promoção das evidências Docker de develop para main quando oportuno. Não executar merges, auto-merge, force-push ou push direto nas bases.
+
+Pendências futuras: provedor real opcional do catálogo, parâmetros de senha/sessão e demais refinamentos nas tarefas correspondentes. Orçamento zero, demonstração local, legado apenas como contexto; não importar código/banco. Acesso operacional restrito ao repositório GameVault e Project pessoal #2 (DEC-030), sem consultar outros repositórios/organizações.
+
+Limite de privacidade já registrado: commits iniciais públicos não foram reescritos; a minimização posterior de detalhes do host não remove dados de histórico antigo. Manter essa cautela nas próximas publicações.

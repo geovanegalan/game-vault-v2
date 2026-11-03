@@ -52,6 +52,8 @@ Default repository: geovanegalan/game-vault-v2, confirmado pelo usuário em Sett
 - Issue #3: limpeza documental integrada em develop pelo PR #4; Issue fechada pelo usuário e cartões concluídos.
 - PR #5: Concluída; promoção develop → main mesclada pelo usuário, commit `76df4ff`. CI em main passou (execução 41355086123); conteúdo das duas bases idêntico após promoção.
 - PR #6: Concluída; evidências Docker mescladas pelo usuário em develop, commit `e4dbe80`; CI desse commit passou (execução 41357772653). Após essa nova entrega, main ainda não contém as evidências Docker; promoção futura segue por PR e merge manual.
+- PR #9: mesclado manualmente pelo usuário em develop, commit 3ee8ebd; CI documental/build do merge passaram e árvore revisada preservada. Issue #8 fechada completed após conferência/autorização DEC-041; cartões Issue/PR Concluída. Cartão do PR já estava concluído após merge, evidência observada da C-07.
+- Promoção #10 develop → main: rascunho, behind pela presença do merge histórico 76df4ff exclusivo de main. Sincronização #11 main → codex/docs-integracao-task-001 preparada para merge manual; depois checkpoint documental dessa branch → develop, conferência de novos checks/ancestralidade e revisão final da promoção. Não usar atalhos que publiquem diretamente nas bases protegidas; nenhum merge pelo agente.
 
 O vínculo ao repositório foi configurado. Default repository foi confirmado pelo usuário como geovanegalan/game-vault-v2 na leitura final de Settings; não houve alteração nessa preferência. A CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações do agente continuam usando sempre destino explícito.
 
@@ -139,7 +141,7 @@ O Status inicial continua definido na regra separada Item added to project, apro
 
 Usuário informou nesta sessão em 03/11/2026 sobre a regra de vínculo: “When a pull request is linked to an issue | set value Status: Em andamento”. Texto informado não explicita o alvo atualizado; limite registrado, sem inferir opção de configuração ausente. Sobre Default repository em Settings: “Está geovanegalan/game-vault-v2”. Ambos são relatos do usuário, sem alteração solicitada/aplicada. As leituras disponíveis foram concluídas; não representam comparação independente de todos os parâmetros internos nem teste artificial de cada automação.
 
-Próximo marco: revisão humana e merge manual do PR #9 em develop. Develop remoto reconferido em b32002a437600354b67aee4e8290b86c8b829b28. Desde a correção C-01 1b7b752, somente documentos mudaram: código/dependências já testados permaneceram iguais. CI de cada novo head continua obrigatória; nunca integrar apenas com resultado de commit anterior. Após o usuário informar merge, conferir pela API antes de fechar Issue #8/mover seu cartão para Concluída; depois preparar promoção develop → main por outro PR para merge manual.
+Marco posterior concluído: merge manual do PR #9 em develop 3ee8ebd confirmado, árvore aaca650 preservada e CI do merge passou; Issue #8 fechada/cartões concluídos sob DEC-041. Código/dependências já testados permaneceram iguais. Próxima sequência: sincronização #11 main → branch de checkpoint, PR documental dessa branch → develop e promoção #10 develop → main. CI de cada novo head continua obrigatória; nunca integrar apenas com resultado de commit anterior. Tudo depende dos merges manuais do usuário, sem reduzir proteções.
 
 ## Issues e Actions
 

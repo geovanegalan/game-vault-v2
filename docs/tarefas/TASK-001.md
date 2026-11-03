@@ -1,9 +1,10 @@
 # TASK-001 — Base técnica mínima do workspace
 
-Versão: 0.2 | Estado: aprovada em DEC-033; implementada/verificada localmente e na CI, revisão humana pendente | Data: 03/11/2026
+Versão: 0.2 | Estado: aprovada em DEC-033; integrada em develop pelo merge manual do PR #9, promoção para main pendente | Data: 03/11/2026
 Issue: [#8](https://github.com/geovanegalan/game-vault-v2/issues/8) | Branch: feature/task-001-base-tecnica
 REQ: 001 a 005 (fundação) | Base: DEC-023/025/026/027/033
 
+Integração conferida em 03/11/2026 (DEC-041): PR #9 merged=true, commit 3ee8ebd; árvores idênticas ao head revisado aaca650. CI do merge passou: [documental](https://github.com/geovanegalan/game-vault-v2/actions/runs/41732949021) e [build Linux](https://github.com/geovanegalan/game-vault-v2/actions/runs/41732949273). Issue #8 fechada/cartões concluídos após conferência. Promoção [#10](https://github.com/geovanegalan/game-vault-v2/pull/10) em rascunho, dependências em STATUS.md; nenhum merge pelo agente. Registros anteriores de revisão/CI pendentes preservam a sequência histórica, sem pendência atual da integração em develop.
 ## Objetivo e aprendizado
 
 Criar duas bases pequenas que compilem e iniciem localmente: Angular em apps/web e NestJS em apps/api. Explicar o componente inicial Angular, a entrada HTTP do Nest, módulos/injeção de dependências e como os scripts npm coordenam os dois pacotes. Ao final haverá uma base executável, ainda sem jornadas do GameVault.

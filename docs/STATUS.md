@@ -1,6 +1,6 @@
 # Ponto de retomada
 
-Atualizado em 03/11/2026 — TASK-001 v0.2 aprovada, implementada e verificada localmente/CI; revisão humana e pendência de desenvolvimento explícitas no PR #9.
+Atualizado em 03/11/2026 — TASK-001 integrada em develop pelo merge manual do PR #9; Issue #8 fechada/cartões concluídos. Promoção #10 em rascunho, aguardando sincronização e checkpoint por merges manuais.
 
 ## Autoridade e escopo
 
@@ -29,15 +29,15 @@ Scripts de instalação de quatro pacotes nativos transitivos foram bloqueados p
 ## GitHub e CI
 
 - Recursos operacionais restritos a [game-vault-v2](https://github.com/geovanegalan/game-vault-v2) e [Project pessoal #2](https://github.com/users/geovanegalan/projects/2), DEC-030; sem consultar outros repositórios/organizações da conta.
-- PR #7 de planejamento mesclado manualmente pelo usuário em develop, confirmado via API. PRs #2/#4/#5/#6 anteriores também integrados pelo usuário. Main permanece na promoção documental anterior; evidências Docker, checkpoint e aplicação desta feature ainda precisam de promoção quando oportuno.
+- PR #9 mesclado manualmente pelo usuário em develop, confirmado via API: 3ee8ebd9b7454057eeae9ed3fc453cc7be7c37f9. Árvore idêntica ao head revisado aaca650; [CI documental](https://github.com/geovanegalan/game-vault-v2/actions/runs/41732949021) e [build Linux](https://github.com/geovanegalan/game-vault-v2/actions/runs/41732949273) do merge passaram, incluindo npm ci/compilação. PRs #2/#4/#5/#6/#7 anteriores também integrados pelo usuário. Main continua em 76df4ff; promoção [#10](https://github.com/geovanegalan/game-vault-v2/pull/10) aberta em rascunho.
 - C-02 aprovada/aplicada (DEC-035): main/develop exigem Integridade do kit (sem testes de produto) e Build web e API (base técnica), ambos da origem GitHub Actions/15368 e strict=true. Todas as demais seções de proteção comparadas e preservadas; auto-merge=false. Workflow de build usa Node 24.21.0, npm 12.0.2, npm ci e build. Nenhum deploy, merge ou ampliação de acesso; detalhes em GITHUB.md.
-- Issues #1/#3 fechadas; Issue #8 reaberta por autorização explícita (DEC-036), cartão Em revisão, fechamento somente após confirmar merge manual do usuário. Project #2 tem duas views e sete automações: Auto-close issue e Item closed desativadas sob DEC-037/039, outras cinco ativas; comparações de IDs/nomes/números/estados passaram. Backlog inicial confirmado pelo usuário (DEC-038); demais leituras/limites em GITHUB.md. Operações usam destino explícito.
+- Issue #8 fechada como completed após conferir integração e autorização DEC-041; cartões Issue #8/PR #9 em Concluída. Cartão do PR #9 já estava Concluída após merge, evidência observada da C-07 sem nova mudança pelo agente. Project #2 mantém duas views/sete regras: Auto-close issue e Item closed desativadas, outras cinco ativas. Valores/limites em GITHUB.md; operações restritas ao destino explícito.
 - Todo merge continua manual pelo usuário. Nunca executar merge/auto-merge, force-push ou push direto em main/develop. Autoria local Geovane/no-reply; Git global preservado.
 
 ## Próxima ação
 
-1. Próxima etapa: usuário revisar e fazer merge manual do PR #9 em develop após conferir os dois checks do último head. C-04/C-06 desativadas pela interface e conferidas pela API; C-05 Backlog/C-07 Concluída confirmados pelo usuário, ativação/identidades preservadas pela API. Leituras disponíveis do Project encerradas: Default repository geovanegalan/game-vault-v2 e regras de inclusão/vínculo/subtarefas relatados sem ajuste. Texto da regra de vínculo não explicita alvo; limites em GITHUB.md. Issue #8 aberta/cartão Em revisão; após relato de merge, confirmar pela API antes de fechar/concluir acompanhamento. Nenhum merge pelo agente.
-2. C-01 validada localmente/CI e C-02 aprovada/aplicada. Conferir CI do último head do PR #9 antes da revisão/merge manual. Proteções efetivas já exigem os dois checks nas duas bases; nenhum merge pelo agente.
+1. Próxima ação manual: revisar/mesclar [#11](https://github.com/geovanegalan/game-vault-v2/pull/11), main → codex/docs-integracao-task-001. Depois conferir e mesclar o PR documental dessa branch → develop; por fim concluir rascunho/revisar promoção [#10](https://github.com/geovanegalan/game-vault-v2/pull/10), develop → main. Todos os merges pelo usuário; agente confere conteúdo/ancestralidade/checks entre etapas. Não usar Update branch que publique diretamente nas bases protegidas.
+2. Causa da sequência: main possui o merge 76df4ff ainda não ancestral de develop; #10 reportou behind com strict=true. Sincronização #11 tem um commit histórico e zero arquivos alterados contra o ancestral comum. Via branch de checkpoint, evita dependência circular das duas bases protegidas. Não executar merge para testar nem reduzir proteções; relatório em reviews/PROMOCAO-TASK-001.md. C-01/C-02 e auditoria disponível do Project encerradas com limites explícitos.
 3. Após essa entrega, propor TASK-002 em versão concreta para modelagem/banco/dados fictícios, com sua aprovação antes de implementar. Provedor real do catálogo e parâmetros de senha/sessão permanecem para tarefas próprias.
 4. Continuar tutoria a partir dos arquivos reais e do guia. Experiência informada: TypeScript/Node/SQL intermediário/avançado, Express intermediário, Angular/Nest iniciante, Git básico e testes prévios com Jest.
 
@@ -49,10 +49,10 @@ Usuário pediu listar/explicar causas e resolver em sequência, em 03/11/2026. C
 | --- | --- | --- |
 | 1 | Aviso moderado original na dependência da CLI | Resolvida por C-01: override restrito 11.0.4, auditorias zero, testes locais e CI do commit 1b7b752 passaram |
 | 2 | Build era informativo: exigência foi separada da criação do job para não mudar proteções sem revisão | Resolvida por C-02 aprovada/aplicada: dois checks GitHub Actions/15368 e strict=true em main/develop; demais seções idênticas antes/depois |
-| 3 | Issue #8 estava fechada enquanto PR #9 segue aberto: acompanhamento encerrado antes da integração | Corrigida sob DEC-036: Issue aberta e cartão Em revisão. Houve novo fechamento segundos após primeira reabertura; segunda reabertura por CLI permaneceu aberta nas releituras. Origem não comprovada; não atribuir causa só pelo nome de automação ativa |
+| 3 | Issue #8 havia sido fechada antes da integração | Reaberta sob DEC-036; depois do merge manual confirmado do PR #9 e autorização DEC-041, fechada como completed e cartão Concluída. Histórico do fechamento anterior preservado |
 | 4 | Project tinha views/automações não atestadas; fechamento/Status inicial prematuros e itens fechados/mesclados em revisão identificados na leitura do usuário | Leituras disponíveis encerradas: C-04/C-06 desativadas pela interface e conferidas pela API; C-05/C-07 valores confirmados pelo usuário. Default repository correto relatado; views e sete identidades/ativação conferidas. Condições internas dependem da leitura do usuário; alvo da regra de vínculo não explícito e nenhuma automação exercitada artificialmente. Tabela/limites em GITHUB.md |
-| 5 | PR #9 ainda aberto: revisão/merge são exclusivamente do usuário | Após correção/avaliação e CI, usuário executa integração em develop; agente nunca mergeia |
-| 6 | main mantém a promoção documental antiga; entregas seguintes estão em develop/feature | Após integração da tarefa, preparar PR develop → main e validações para merge manual do usuário |
+| 5 | Integração da TASK-001 em develop | Resolvida: merge manual #9 confirmado em 3ee8ebd, árvore revisada preservada e dois checks do merge passaram |
+| 6 | main mantém promoção documental antiga e possui um merge exclusivo no histórico | Promoção #10 em rascunho. Aguardar #11 main → branch de checkpoint, depois checkpoint → develop, conferir novos checks/ancestralidade e então merge manual da promoção para main. Nenhuma integração executada pelo agente |
 
 Avisos de install scripts bloqueados pelo npm 12 não são falha pendente: a política padrão restringiu quatro scripts transitivos e instalação/builds/execução passaram assim. Manter o comportamento atual; não liberar scripts para apenas eliminar a mensagem. Python opcional ausente e Docker sem status naquela consulta também não são bloqueios da base Node já validada.
 

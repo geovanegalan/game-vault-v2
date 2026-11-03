@@ -75,15 +75,19 @@ Em resposta à pergunta sobre destino/filtro, usuário informou nesta sessão em
 
 Nenhum defeito inferido apenas por PRs não serem adicionados automaticamente. Não remover is:issue sem discutir a mudança de comportamento; nenhuma alteração autorizada/aplicada nesta leitura.
 
-### C-05 — Proposta de Status inicial neutro
+### C-05 — Status inicial Backlog confirmado pelo usuário
 
-Estado: proposta, aguardando aprovação específica (DEC-038). Usuário relatou a configuração de Item added to project nesta sessão em 03/11/2026: “When an item is added to the project. Issue, pull request. Set value, status: Em andamento”. É relato da interface, não alteração autorizada ou comparação independente por API.
+Estado: aprovada em DEC-038, executada e confirmada pelo usuário na interface; alcance disponível conferido pela API em 03/11/2026. Usuário relatou originalmente Item added to project: “When an item is added to the project. Issue, pull request. Set value, status: Em andamento”. A autorização veio em mensagem posterior transcrita no registro de decisões. Cópia anterior da API confirmou Item added to project ativa, Auto-close issue desativada e demais cinco ativas; Issue #8 OPEN/cartão Em revisão e PR #9 aberto/sem merge.
 
-Problema: inclusão no quadro marca Issues/PRs como execução em curso, mesmo quando uma Issue contém proposta ainda não aprovada. Isso contraria o significado operacional de Em andamento definido acima e pode confundir o acompanhamento; não concede autorização real de implementar.
+Problema da configuração anterior: inclusão no quadro marcava Issues/PRs como execução em curso, mesmo quando uma Issue continha proposta ainda não aprovada. Isso contrariava o significado operacional de Em andamento definido acima e podia confundir o acompanhamento; não concedia autorização real de implementar.
 
 Recomendação C-05: alterar somente Set value → Status de Item added to project, de Em andamento para Backlog, preservando regra ativa e tipos Issue/pull request. Itens aprovados serão movidos manualmente para Pronta/Em andamento; PR pronto para revisão será movido manualmente para Em revisão. Backlog inicial é triagem, não decisão sobre o conteúdo. Alternativa: desativar somente Item added to project e preencher Status manualmente, com mais trabalho e risco de itens sem coluna. Não mudar para Pronta automaticamente: entrada no quadro não comprova aprovação.
 
 Após aprovação: edição pelo usuário na interface autenticada; informar a condição resultante. Agente compara IDs/nomes/estados enabled das sete regras pela API (deve permanecer uma desativada e seis ativas), confere Issue #8/cartão/PR #9 preservados e registra que a condição depende da leitura do usuário porque a API consultada não a expõe. Não criar/mover item apenas para testar nem presumir mudança retroativa de cartões existentes. Nenhuma mudança de código, permissões, proteção ou outras regras. Para desfazer, reverter somente esse valor na interface após revisão. Depois continuar leitura das regras restantes e repositório padrão.
+
+Resultado: usuário informou “Feito, alterei o Status inicial para Backlog e mantive a regra ativa, preservando as demais configurações. Pode conferir o que for possível pela API e depois seguimos para a próxima pendência.” Comparação das sete regras por ID com cópia anterior confirmou nomes/números/estados enabled idênticos, sem adição/remoção; Item added to project ativa, Auto-close issue desativada, demais cinco ativas. Issue #8 OPEN/cartão Em revisão e PR #9 aberto/merged=false. Backlog e preservação das condições internas são confirmados pelo usuário; não foram lidos diretamente pela API, que não os expõe no tipo consultado. Nenhum item artificial criado/movido para teste e nenhum merge executado.
+
+Próxima leitura solicitada: Item closed, tipos de item e Status atribuído. Depois continuar as demais regras/repositório padrão, sem modificar configurações por inferência.
 
 ## Issues e Actions
 

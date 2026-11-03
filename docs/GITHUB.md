@@ -1,6 +1,6 @@
 # GitHub — fluxo e configuração
 
-Repositório público: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2). Quadro pessoal: [GameVault 2.0 / #2](https://github.com/users/geovanegalan/projects/2). Configuração corrente em 01/11/2026; histórico em [EVIDENCIAS-BOOTSTRAP](ambiente/EVIDENCIAS-BOOTSTRAP.md).
+Repositório público: [geovanegalan/game-vault-v2](https://github.com/geovanegalan/game-vault-v2). Quadro pessoal: [GameVault 2.0 / #2](https://github.com/users/geovanegalan/projects/2). Proteções reconferidas em 03/11/2026; histórico em [EVIDENCIAS-BOOTSTRAP](ambiente/EVIDENCIAS-BOOTSTRAP.md).
 
 ## Alcance autorizado
 
@@ -15,7 +15,7 @@ Esse limite orienta as operações do agente; não significa que a credencial OA
 - PR de feature para develop liga Issue/TASK, REQ, DEC/ADR, evidências, riscos e verificações. PR de develop para main descreve uma versão revisada.
 - Todos os merges são manuais pelo usuário. Não executar merge, auto-merge, force-push ou push direto nas bases. O bootstrap vazio já terminou.
 
-Proteções verificadas no bootstrap em ambas as bases: PR obrigatório, check **Integridade do kit (sem testes de produto)** obrigatório, branch atualizada, conversas resolvidas, administradores incluídos, bloqueio de força/exclusão. Auto-merge desabilitado. A contagem de aprovações obrigatórias é zero por ser um projeto individual; revisão e merge manuais continuam exigidos pelo processo.
+Proteções verificadas em ambas as bases: PR obrigatório, checks **Integridade do kit (sem testes de produto)** e **Build web e API (base técnica)** obrigatórios, ambos da origem GitHub Actions (15368), branch atualizada, conversas resolvidas, administradores incluídos, bloqueio de força/exclusão. O build foi acrescentado pela C-02 aprovada em DEC-035; demais seções da proteção comparadas e preservadas. Auto-merge desabilitado. A contagem de aprovações obrigatórias é zero por ser um projeto individual; revisão e merge manuais continuam exigidos pelo processo.
 
 AGENTS.md é contrato de colaboração, não controle técnico de acesso. Antes de mudar proteções, consultar fontes oficiais, apresentar a mudança concreta e obter autorização. Preservar o nome do check enquanto ele for exigido pelas regras; não exigir checks de aplicação inexistentes.
 
@@ -47,13 +47,13 @@ Uma Issue deve ligar REQ → DEC/ADR → TASK → PR → evidência. A existênc
 
 O workflow [bootstrap.yml](../.github/workflows/bootstrap.yml) executa [validar_kit.py](../scripts/validar_kit.py): presença/conteúdo dos documentos essenciais e metadados das cinco skills. Python executa no runner GitHub; o comando local foi diagnosticado como alias sem interpretador. Não instalar Python apenas para esta verificação.
 
-TASK-001 acrescenta [build.yml](../.github/workflows/build.yml), com Node 24.21.0, npm 12.0.2 no runner, npm ci e npm run build. Nome do job: Build web e API (base técnica). Ele verifica instalação/compilação, sem simular testes de produto ou deploy. O nome do check documental/proteções existentes foi preservado; tornar o novo build obrigatório exige proposta/autorização própria após conferir execução real.
+TASK-001 acrescenta [build.yml](../.github/workflows/build.yml), com Node 24.21.0, npm 12.0.2 no runner, npm ci e npm run build. Nome do job: Build web e API (base técnica). Ele verifica instalação/compilação, sem simular testes de produto ou deploy. O nome do check documental foi preservado; a obrigatoriedade do build foi autorizada separadamente em DEC-035 e aplicada após conferir execução real.
 
-### C-02 — Proposta para exigir também o build
+### C-02 — Build obrigatório aprovado e aplicado
 
-Estado: aguardando aprovação (DEC-035), ainda não aplicada. Reconsulta em 03/11/2026 confirmou, em main/develop, strict=true e somente Integridade do kit (sem testes de produto) obrigatório. Check-runs reais confirmaram os nomes dos dois jobs e origem GitHub Actions, app_id 15368.
+Estado: aprovada pelo usuário e aplicada em 03/11/2026 (DEC-035). Antes da alteração, main/develop exigiam somente Integridade do kit (sem testes de produto), com strict=true. Check-runs do commit 1b7b752 confirmaram sucesso dos dois jobs e origem GitHub Actions, app_id 15368.
 
-Proposta concreta para main e develop, exclusivamente neste repositório:
+Plano aprovado para main e develop, exclusivamente neste repositório:
 
 - Preservar os checks já exigidos e acrescentar Build web e API (base técnica), vinculado ao app GitHub Actions 15368. Não substituir/excluir checks existentes.
 - Manter strict=true, exigindo branch atualizada; PR obrigatório, administradores incluídos, conversas resolvidas e bloqueios de força/exclusão permanecem.
@@ -61,7 +61,9 @@ Proposta concreta para main e develop, exclusivamente neste repositório:
 - Reler ambas as regras e conferir nomes/origem/strict, comparar os demais controles e conferir checks do PR #9. Não executar merge ou criar um commit propositalmente quebrado para testar.
 - Se configuração divergir inesperadamente ou apenas uma branch for alterada, informar o resultado exato e interromper a parte afetada; não reduzir proteções por conveniência.
 
-Efeito esperado: merge bloqueado se o build falhar ou não existir, mesmo quando a documentação passar. O workflow da TASK-001 precisa acompanhar os próximos PRs, inclusive a promoção develop → main. Alternativa de manter o build informativo evita a mudança, mas não fecha a pendência de controle técnico; recomendação é torná-lo obrigatório após aprovação.
+Resultado conferido: cópia integral de cada regra antes da mudança; releitura imediatamente antes do PATCH restrito aos checks; releitura posterior confirmou exatamente os dois checks/origem e strict=true em cada branch. Comparação de todas as demais seções da proteção retornou igualdade. Consulta ao repositório confirmou auto-merge=false. Nenhum merge foi executado e nenhuma autorização ampliada.
+
+Efeito: merge bloqueado se o build falhar ou não existir, mesmo quando a documentação passar. O workflow da TASK-001 precisa acompanhar os próximos PRs, inclusive a promoção develop → main. A alternativa de manter o build informativo foi apresentada na proposta e não foi escolhida. Não foi criado commit defeituoso nem feito merge para testar o bloqueio; a evidência é a regra efetiva da API e os checks reais do PR #9.
 
 Fonte: [API oficial de status checks obrigatórios](https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection). Merges continuam exclusivamente manuais pelo usuário.
 

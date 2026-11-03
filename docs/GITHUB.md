@@ -47,7 +47,9 @@ Uma Issue deve ligar REQ → DEC/ADR → TASK → PR → evidência. A existênc
 
 O workflow [bootstrap.yml](../.github/workflows/bootstrap.yml) executa [validar_kit.py](../scripts/validar_kit.py): presença/conteúdo dos documentos essenciais e metadados das cinco skills. Python executa no runner GitHub; o comando local foi diagnosticado como alias sem interpretador. Não instalar Python apenas para esta verificação.
 
-CI significa verificação automática de alterações. A atual é documental; não comprova funcionamento da futura aplicação. Build, lint, testes de produto e eventual entrega terão propostas próprias. Nenhum deploy configurado ou autorizado.
+TASK-001 acrescenta [build.yml](../.github/workflows/build.yml), com Node 24.21.0, npm 12.0.2 no runner, npm ci e npm run build. Nome do job: Build web e API (base técnica). Ele verifica instalação/compilação, sem simular testes de produto ou deploy. O nome do check documental/proteções existentes foi preservado; tornar o novo build obrigatório exige proposta/autorização própria após conferir execução real.
+
+CI significa verificação automática de alterações. Integridade documental e build são evidências distintas; não comprovam regras de negócio ou jornadas do MVP. Lint, testes de produto e eventual entrega terão implementação proporcional nas tarefas aprovadas. Nenhum deploy configurado ou autorizado.
 
 ## Recuperação e histórico
 

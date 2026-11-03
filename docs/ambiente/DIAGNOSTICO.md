@@ -16,7 +16,7 @@ Atualizado em 01/11/2026 — preparação após aprovação da stack/ADRs. Vers�
 | Docker | Desktop 4.97.0.244584 por usuário/WSL 2 após DEC-032; CLI/motor 29.9.2 e Compose v5.6.1 | Hash/assinatura válidos, instalador saída 0; motor local e hello-world descartável passaram; PATH registrado confirmado. Ver EVIDENCIAS-DOCKER.md |
 | winget | 1.29.380 executou fora da restrição inicial | Disponível; não usado para instalar/atualizar |
 | Python | Alias WindowsApps; consulta retorna que Python não foi encontrado | Sem interpretador executável por esse comando. Opcional, não instalar só para o kit |
-| Angular/Nest/Prisma | Sem instalação de projeto | Linhas aprovadas; dependências locais somente após primeiro commit e tarefa autorizada |
+| Angular/Nest/Prisma | TASK-001 aprovada: Angular 22.2.4/Nest 12.3.2 e TypeScript 6.0.3 instalados localmente com lockfile único; builds e execução básica passaram | Sem CLI global ou Prisma/banco de projeto; aviso de desenvolvimento na CLI descrito em ../reviews/TASK-001.md |
 
 ## Git local e remoto — coleta pré-primeiro commit
 - Antes das alterações, git status confirmou ausência de repositório local. Inicialização em main e origin no remoto informado foram executadas após autorização de preparação/primeiro commit.

@@ -55,6 +55,36 @@ Limite: ProjectV2Workflow expõe nome/estado ativo, sem condições ou filtros n
 
 Hipótese, não causa comprovada: uma regra de fechamento pode interferir na sequência de reabertura/movimentação. A [descrição oficial de Auto-close issue](https://github.blog/changelog/2024-04-25-github-issues-projects-auto-close-issue-project-workflow/) explica fechamento por status configurado; o nome/estado ativo sozinho não revela qual status foi escolhido neste quadro. Próximo passo: usuário abrir menu do Project → Workflows → Auto-close issue e informar a condição exibida. Apresentar ajuste concreto e obter aprovação antes de mudar automações; manter fechamento após merge manual.
 
+### C-04 — Correção do fechamento por status aprovada e verificada
+
+Estado: aprovada em DEC-037, desativada pelo usuário e verificada pela API em 03/11/2026. Antes da alteração, sete regras enabled=true, Issue #8 OPEN/cartão Em revisão e PR #9 aberto/sem merge foram conferidos; cópia local da lista salva para comparar. Evidência fornecida pelo usuário nesta sessão em 03/11/2026, ao ler Auto-close issue: “When the status is updated. Status Em revisão”. Isso confirma, por relato do usuário, uma condição incompatível com DEC-036: entrar em revisão fecha a Issue antes do merge. É compatível com o fechamento intermediário observado, sem constituir identificação inequívoca do executor de cada evento histórico.
+
+Recomendação concreta: desativar somente Auto-close issue no Project pessoal #2; preservar todas as outras regras, views, campos, proteções e estados atuais. Fechar a Issue #8 manualmente apenas depois de confirmar o merge manual do usuário. A troca reduz conveniência, mas elimina o fechamento causado apenas por movimentação do cartão.
+
+Alternativa apresentada: trocar o gatilho para Concluída. Economiza um fechamento manual, mas continua fechando uma Issue quando alguém move o cartão para esse estado, sem exigir que o merge tenha ocorrido. Manter Em revisão conflita com o fluxo aprovado e não é recomendado. Essa alternativa não foi escolhida; desativação executada conforme resultado abaixo.
+
+Após aprovação: usuário abrir Project → menu → Workflows → Auto-close issue e desativar a regra pela interface autenticada, pois o recurso disponível ao agente não oferece essa edição. Agente relerá enabled=false pela API e conferirá Issue #8 aberta, cartão Em revisão e PR #9 sem merge; comparar estados enabled das demais regras. Não mover cartão para testar nem fechar Issue de teste. Recuperação, se solicitada: reativar a regra somente após aprovar uma condição compatível; configuração original informada acima preservada para histórico.
+
+Fonte do procedimento de edição: [automações integradas do GitHub](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-built-in-automations). Ainda faltam condições/filtros das outras regras e repositório padrão; esta proposta não os altera nem os considera verificados.
+
+Resultado após participação do usuário: resposta literal “Feito, desativei somente o Auto-close issue. Pode conferir pela API se as demais automações foram preservadas e depois seguimos para a próxima pendência.” Comparação por ID das sete regras com a cópia anterior confirmou somente Auto-close issue, número 3, passando de enabled=true para false. As outras seis preservaram IDs, nomes, números e enabled=true; nenhuma regra adicionada/removida. Condições/filtros não são expostos pelo tipo consultado e não foram comparados. Issue #8 OPEN/cartão Em revisão e PR #9 aberto/merged=false reconfirmados.
+
+### Leitura de Auto-add to project — relato do usuário
+
+Em resposta à pergunta sobre destino/filtro, usuário informou nesta sessão em 03/11/2026: “When de filter matches a new or updated item. Filters: game-vault-v2 is:issue is:open”. Classificação: configuração relatada pelo usuário; a API consultada não expõe o filtro para comparação independente. Repositório exibido game-vault-v2; filtro is:issue is:open inclui automaticamente Issues abertas quando criadas/atualizadas e exclui PRs desse mecanismo. Isso não impede adicionar PRs manualmente, como o #9. A [documentação oficial de auto-add](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/adding-items-automatically) confirma os qualificadores e o comportamento por criação/atualização; não garante importação retroativa de todo o histórico.
+
+Nenhum defeito inferido apenas por PRs não serem adicionados automaticamente. Não remover is:issue sem discutir a mudança de comportamento; nenhuma alteração autorizada/aplicada nesta leitura.
+
+### C-05 — Proposta de Status inicial neutro
+
+Estado: proposta, aguardando aprovação específica (DEC-038). Usuário relatou a configuração de Item added to project nesta sessão em 03/11/2026: “When an item is added to the project. Issue, pull request. Set value, status: Em andamento”. É relato da interface, não alteração autorizada ou comparação independente por API.
+
+Problema: inclusão no quadro marca Issues/PRs como execução em curso, mesmo quando uma Issue contém proposta ainda não aprovada. Isso contraria o significado operacional de Em andamento definido acima e pode confundir o acompanhamento; não concede autorização real de implementar.
+
+Recomendação C-05: alterar somente Set value → Status de Item added to project, de Em andamento para Backlog, preservando regra ativa e tipos Issue/pull request. Itens aprovados serão movidos manualmente para Pronta/Em andamento; PR pronto para revisão será movido manualmente para Em revisão. Backlog inicial é triagem, não decisão sobre o conteúdo. Alternativa: desativar somente Item added to project e preencher Status manualmente, com mais trabalho e risco de itens sem coluna. Não mudar para Pronta automaticamente: entrada no quadro não comprova aprovação.
+
+Após aprovação: edição pelo usuário na interface autenticada; informar a condição resultante. Agente compara IDs/nomes/estados enabled das sete regras pela API (deve permanecer uma desativada e seis ativas), confere Issue #8/cartão/PR #9 preservados e registra que a condição depende da leitura do usuário porque a API consultada não a expõe. Não criar/mover item apenas para testar nem presumir mudança retroativa de cartões existentes. Nenhuma mudança de código, permissões, proteção ou outras regras. Para desfazer, reverter somente esse valor na interface após revisão. Depois continuar leitura das regras restantes e repositório padrão.
+
 ## Issues e Actions
 
 Uma Issue deve ligar REQ → DEC/ADR → TASK → PR → evidência. A existência no quadro não autoriza implementação. Criar tarefas de aplicação somente após refinamento/aprovação correspondentes.

@@ -1,6 +1,6 @@
 # Ponto de retomada
 
-Atualizado em 03/11/2026 — TASK-001 integrada em develop pelo merge manual do PR #9; Issue #8 fechada/cartões concluídos. Promoção #10 em rascunho, aguardando sincronização e checkpoint por merges manuais.
+Atualizado em 03/11/2026 — TASK-001 integrada em develop pelo merge manual do PR #9; Issue #8 fechada/cartões concluídos. Checkpoint #12 e promoção #10 preparados para merges manuais, nessa ordem.
 
 ## Autoridade e escopo
 
@@ -36,8 +36,8 @@ Scripts de instalação de quatro pacotes nativos transitivos foram bloqueados p
 
 ## Próxima ação
 
-1. Próxima ação manual: revisar/mesclar [#11](https://github.com/geovanegalan/game-vault-v2/pull/11), main → codex/docs-integracao-task-001. Depois conferir e mesclar o PR documental dessa branch → develop; por fim concluir rascunho/revisar promoção [#10](https://github.com/geovanegalan/game-vault-v2/pull/10), develop → main. Todos os merges pelo usuário; agente confere conteúdo/ancestralidade/checks entre etapas. Não usar Update branch que publique diretamente nas bases protegidas.
-2. Causa da sequência: main possui o merge 76df4ff ainda não ancestral de develop; #10 reportou behind com strict=true. Sincronização #11 tem um commit histórico e zero arquivos alterados contra o ancestral comum. Via branch de checkpoint, evita dependência circular das duas bases protegidas. Não executar merge para testar nem reduzir proteções; relatório em reviews/PROMOCAO-TASK-001.md. C-01/C-02 e auditoria disponível do Project encerradas com limites explícitos.
+1. Próxima ação manual: revisar/mesclar checkpoint [#12](https://github.com/geovanegalan/game-vault-v2/pull/12), codex/docs-integracao-task-001 → develop. Depois agente confere integração e novos checks da promoção [#10](https://github.com/geovanegalan/game-vault-v2/pull/10), develop → main, antes de prepará-la para revisão/merge manual do usuário. #10 permanece em rascunho até integrar o checkpoint; nenhum merge pelo agente.
+2. Reavaliação: #10 inicialmente reportou behind, mas reconsultas após os checks passarem mostraram clean com as mesmas bases e strict=true. A sincronização extra #11 foi fechada sem merge e seu cartão arquivado, pois não se mostrou necessária. Preservar essa evidência, sem tratar divergência de histórico sozinha como bloqueio permanente ou reduzir proteções. Relatório em reviews/PROMOCAO-TASK-001.md. C-01/C-02 e auditoria disponível do Project encerradas com limites explícitos.
 3. Após essa entrega, propor TASK-002 em versão concreta para modelagem/banco/dados fictícios, com sua aprovação antes de implementar. Provedor real do catálogo e parâmetros de senha/sessão permanecem para tarefas próprias.
 4. Continuar tutoria a partir dos arquivos reais e do guia. Experiência informada: TypeScript/Node/SQL intermediário/avançado, Express intermediário, Angular/Nest iniciante, Git básico e testes prévios com Jest.
 
@@ -52,7 +52,7 @@ Usuário pediu listar/explicar causas e resolver em sequência, em 03/11/2026. C
 | 3 | Issue #8 havia sido fechada antes da integração | Reaberta sob DEC-036; depois do merge manual confirmado do PR #9 e autorização DEC-041, fechada como completed e cartão Concluída. Histórico do fechamento anterior preservado |
 | 4 | Project tinha views/automações não atestadas; fechamento/Status inicial prematuros e itens fechados/mesclados em revisão identificados na leitura do usuário | Leituras disponíveis encerradas: C-04/C-06 desativadas pela interface e conferidas pela API; C-05/C-07 valores confirmados pelo usuário. Default repository correto relatado; views e sete identidades/ativação conferidas. Condições internas dependem da leitura do usuário; alvo da regra de vínculo não explícito e nenhuma automação exercitada artificialmente. Tabela/limites em GITHUB.md |
 | 5 | Integração da TASK-001 em develop | Resolvida: merge manual #9 confirmado em 3ee8ebd, árvore revisada preservada e dois checks do merge passaram |
-| 6 | main mantém promoção documental antiga e possui um merge exclusivo no histórico | Promoção #10 em rascunho. Aguardar #11 main → branch de checkpoint, depois checkpoint → develop, conferir novos checks/ancestralidade e então merge manual da promoção para main. Nenhuma integração executada pelo agente |
+| 6 | main mantém promoção documental antiga | Checkpoint #12 → develop, depois conferir novos checks e preparar promoção #10 → main para merge manual. #11 fechado sem merge após GitHub reavaliar #10 como clean com strict=true. Nenhuma integração executada pelo agente |
 
 Avisos de install scripts bloqueados pelo npm 12 não são falha pendente: a política padrão restringiu quatro scripts transitivos e instalação/builds/execução passaram assim. Manter o comportamento atual; não liberar scripts para apenas eliminar a mensagem. Python opcional ausente e Docker sem status naquela consulta também não são bloqueios da base Node já validada.
 

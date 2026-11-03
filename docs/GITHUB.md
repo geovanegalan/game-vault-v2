@@ -33,13 +33,27 @@ Criado manualmente pelo usuário, posteriormente configurado pela CLI sob DEC-03
 
 Campos conferidos pela CLI: **Prioridade** (Alta, Média, Baixa), **Fase** (Documentação, Ambiente, Implementação, Revisão), **Requisito** e **Dependências**. Os dois últimos são campos de texto. Não foi necessário recriar campos ou opções.
 
+Configuração operacional após auditoria de 03/11/2026: identidades/ativação lidas pela API; valores internos abaixo confirmados pelo usuário na interface, sem comparação independente desses valores pela API.
+
+| Regra | Ativação pela API | Configuração relatada / efeito esperado |
+| --- | --- | --- |
+| Auto-add to project | Ativa | game-vault-v2, is:issue is:open; PRs adicionados manualmente |
+| Item added to project | Ativa | Issue/pull request → Backlog, DEC-038 |
+| Pull request linked to issue | Ativa | When a pull request is linked to an issue → Em andamento; texto não explicita o item atualizado |
+| Pull request merged | Ativa | Concluída após merge manual, DEC-040 |
+| Auto-add sub-issues to project | Ativa | Adiciona subtarefas de item já no Project; sem Status/filtro exibido na leitura |
+| Auto-close issue | Desativada | DEC-037; fechamento da Issue após conferir integração manual |
+| Item closed | Desativada | DEC-039; atualizar cartão explicitamente após conferir o resultado do fechamento |
+
+Default repository: geovanegalan/game-vault-v2, confirmado pelo usuário em Settings. Views: View 1/quadro e View 2/tabela, sem filtro, conferidas pela API; nenhum ajuste de layout/nome necessário nesta auditoria. O quadro não concede autorização de implementar tarefas e nenhuma regra executa merge pelo agente.
+
 - Issue #1 / TASK-000: fechada; Docker A-02 aprovado em DEC-032, instalado e verificado, com evidências integradas em develop pelo PR #6.
 - PR #2: Concluída; merge manual do usuário confirmado em develop, commit `52b2acd`.
 - Issue #3: limpeza documental integrada em develop pelo PR #4; Issue fechada pelo usuário e cartões concluídos.
 - PR #5: Concluída; promoção develop → main mesclada pelo usuário, commit `76df4ff`. CI em main passou (execução 41355086123); conteúdo das duas bases idêntico após promoção.
 - PR #6: Concluída; evidências Docker mescladas pelo usuário em develop, commit `e4dbe80`; CI desse commit passou (execução 41357772653). Após essa nova entrega, main ainda não contém as evidências Docker; promoção futura segue por PR e merge manual.
 
-O vínculo ao repositório foi configurado. A preferência de repositório padrão para criar Issues pela interface não foi alterada: a CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações usam sempre o destino explícito; isso não bloqueia o quadro.
+O vínculo ao repositório foi configurado. Default repository foi confirmado pelo usuário como geovanegalan/game-vault-v2 na leitura final de Settings; não houve alteração nessa preferência. A CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações do agente continuam usando sempre destino explícito.
 
 ### Acompanhamento da TASK-001 e auditoria do Project — 03/11/2026
 
@@ -119,7 +133,13 @@ Fonte: [automações integradas do GitHub](https://docs.github.com/en/issues/pla
 
 Usuário informou nesta sessão em 03/11/2026: “When an item in the project has sub-issues | Add sub-issues to the project | Aparece só isso... nao tem status como nos outros nada...”. Regra ativa pela API; condição/ação relatadas pelo usuário. Inclui subtarefas de item já no Project; nenhum filtro/Status/limite de repositório foi mostrado na leitura informada. Isso não amplia o alcance autorizado ao agente, restrito ao GameVault. Nenhuma alteração ou defeito inferido.
 
-O Status inicial continua definido na regra separada Item added to project, aprovada como Backlog. Não foi criada subtarefa artificial para testar a interação/ordem de execução dessas regras. Últimas leituras solicitadas: texto completo When/Set de Pull request linked to issue, incluindo alvo se indicado, e valor de Default repository em Settings. API consultada não expõe esses detalhes; não declarar configuração ausente só por ela não estar disponível na API. Caminho do repositório padrão confirmado na [documentação oficial](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository#setting-a-default-repository-for-your-project).
+O Status inicial continua definido na regra separada Item added to project, aprovada como Backlog. Não foi criada subtarefa artificial para testar a interação/ordem de execução dessas regras. API consultada não expõe esses detalhes; não declarar configuração ausente só por ela não estar disponível na API. Caminho do repositório padrão confirmado na [documentação oficial](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository#setting-a-default-repository-for-your-project).
+
+### Leituras finais e limite da auditoria
+
+Usuário informou nesta sessão em 03/11/2026 sobre a regra de vínculo: “When a pull request is linked to an issue | set value Status: Em andamento”. Texto informado não explicita o alvo atualizado; limite registrado, sem inferir opção de configuração ausente. Sobre Default repository em Settings: “Está geovanegalan/game-vault-v2”. Ambos são relatos do usuário, sem alteração solicitada/aplicada. As leituras disponíveis foram concluídas; não representam comparação independente de todos os parâmetros internos nem teste artificial de cada automação.
+
+Próximo marco: revisão humana e merge manual do PR #9 em develop. Develop remoto reconferido em b32002a437600354b67aee4e8290b86c8b829b28. Desde a correção C-01 1b7b752, somente documentos mudaram: código/dependências já testados permaneceram iguais. CI de cada novo head continua obrigatória; nunca integrar apenas com resultado de commit anterior. Após o usuário informar merge, conferir pela API antes de fechar Issue #8/mover seu cartão para Concluída; depois preparar promoção develop → main por outro PR para merge manual.
 
 ## Issues e Actions
 

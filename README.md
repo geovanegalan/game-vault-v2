@@ -2,7 +2,7 @@
 
 Biblioteca pessoal de jogos e comunidade para avaliar, fazer amigos e trocar experiências. Reescrita do zero de um projeto acadêmico, desenvolvida com **Spec-Driven Development**: definir o comportamento, aprovar decisões e implementar em tarefas verificáveis.
 
-> **Em planejamento.** Produto, stack e arquitetura aprovados; primeiro commit documental publicado. A aplicação ainda não existe. Veja o [estado atual e as pendências](docs/STATUS.md).
+> **Base técnica inicial.** Angular e NestJS compilam e iniciam localmente. As funcionalidades abaixo ainda estão planejadas. Veja o [estado atual e as pendências](docs/STATUS.md).
 
 ## O que está planejado
 
@@ -34,13 +34,32 @@ O foco é portfólio e aprendizado, sem hospedagem paga. Cada instalação terá
 | Organização e execução local | npm workspaces e Docker Compose |
 | Testes planejados | Vitest, integração e Playwright |
 
-A [comparação de stack](docs/COMPARACAO-STACK.md) registra alternativas e consequências. Os registros [ADR-001: arquitetura](docs/arquitetura/ADR-001.md) e [ADR-002: autenticação](docs/arquitetura/ADR-002.md) detalham as escolhas. Dependências locais serão fixadas na tarefa correspondente; aprovar a stack não autoriza todas as instalações ou tarefas.
+A [comparação de stack](docs/COMPARACAO-STACK.md) registra alternativas e consequências. Os registros [ADR-001: arquitetura](docs/arquitetura/ADR-001.md) e [ADR-002: autenticação](docs/arquitetura/ADR-002.md) detalham as escolhas. A [TASK-001](docs/tarefas/TASK-001.md) fixa Angular 22.2.4, NestJS 12.3.2 e TypeScript 6.0.3; demais dependências e ferramentas estão nos manifestos/lockfile. Aprovar esta base não autoriza as próximas tarefas.
 
 ## Como experimentar
 
-Ainda não há comando de execução nem contas de demonstração disponíveis. A entrega planejada permitirá iniciar localmente após preparar os pré-requisitos, com dados fictícios persistentes. Os comandos serão publicados depois de implementados e verificados.
+Na raiz, com Node 24.21.0 e npm 12.0.2:
 
-O [diagnóstico](docs/ambiente/DIAGNOSTICO.md) registra as ferramentas existentes. O [plano de ambiente](docs/ambiente/PLANO-AMBIENTE.md) aguarda aprovação da instalação do Docker; não é necessário atualizar Node neste momento.
+```sh
+npm ci
+npm run build
+```
+
+Em dois terminais, também na raiz:
+
+```sh
+npm run dev:web
+```
+
+```sh
+npm run dev:api
+```
+
+Web: http://127.0.0.1:4200. API: http://127.0.0.1:3000. Encerre cada processo com Ctrl+C. Consulte o [guia de execução e dos arquivos](docs/ambiente/COMO-EXECUTAR.md).
+
+Esta base não usa banco, login ou chave externa; ainda não há contas demonstrativas ou integração entre tela/API. A execução completa em um comando com Compose pertence à entrega futura.
+
+O [diagnóstico](docs/ambiente/DIAGNOSTICO.md) registra as ferramentas existentes. O Docker foi instalado conforme o [plano de ambiente](docs/ambiente/PLANO-AMBIENTE.md), com motor e contêiner de diagnóstico verificados; veja as [evidências](docs/ambiente/EVIDENCIAS-DOCKER.md). Não é necessário atualizar Node neste momento.
 
 ## Desenvolvimento
 
@@ -51,9 +70,10 @@ feature/<tarefa> → pull request → develop
 develop         → pull request → main
 ```
 
-`main` e `develop` exigem PR e verificação documental. Todos os merges são feitos manualmente pelo responsável pelo projeto. A automação atual verifica documentação e skills; ainda não há build, testes de aplicação ou deploy. Consulte o [guia GitHub](docs/GITHUB.md).
+`main` e `develop` exigem PR e verificação documental. Todos os merges são feitos manualmente pelo responsável pelo projeto. A CI verifica documentação/skills e compila web/API com instalação pelo lockfile. Testes de regras e jornadas serão adicionados nas tarefas correspondentes; não há deploy. Consulte o [guia GitHub](docs/GITHUB.md).
 
-- [Backlog](docs/planejamento/BACKLOG.md) e [TASK-001](docs/tarefas/TASK-001.md): planejamento, ainda sem autorização de código.
+- [Backlog](docs/planejamento/BACKLOG.md): próximas tarefas, ainda sujeitas a aprovação.
+- [Revisão TASK-001](docs/reviews/TASK-001.md): verificações e histórico da correção aprovada de dependência transitiva da CLI.
 - [Comparação de catálogo](docs/catalogo/COMPARACAO.md): provedor real ainda não escolhido.
 - [Preparação assistida do ambiente](docs/AMBIENTE.md): diagnóstico e instalações autorizadas.
 - [Fontes consultadas](docs/FONTES.md): documentação e limites das verificações.

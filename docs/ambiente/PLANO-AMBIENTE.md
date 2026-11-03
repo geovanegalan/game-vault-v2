@@ -1,5 +1,5 @@
 # Plano de preparação do ambiente
-Versão: 0.1 | Estado: proposta concreta para aprovação | Data: 01/11/2026
+Versão: 0.1 | Estado: A-02 aprovado em DEC-032; instalação e critérios de validação passaram | Data: 01/11/2026
 Raiz: GameVault - 2.0 | Base: DEC-025/026/027 | Diagnóstico: DIAGNOSTICO.md
 
 ## Objetivo
@@ -39,4 +39,12 @@ Linhas: Angular 22 / TypeScript 6.0, NestJS 12, Prisma 7, PostgreSQL 18; Vitest 
 Consultadas em 01/11/2026: [Docker Desktop 4.97.0](https://docs.docker.com/desktop/release-notes/#4970), [instalação Windows](https://docs.docker.com/desktop/setup/install/windows-install/), [permissões Windows](https://docs.docker.com/desktop/setup/install/windows-permission-requirements), [WSL no Docker](https://docs.docker.com/desktop/features/wsl), requisitos de Angular/Nest/Prisma em `../COMPARACAO-STACK.md`. Liberação do instalador pode ser gradual; se o artefato específico não estiver disponível, apresentar outra versão concreta para revisão.
 
 ## Aprovação / execução
-Pendente para A-02. A mensagem que aprova stack/ADRs autoriza preparar este plano, não foi tratada como aprovação de instalador/versão/impacto ainda não apresentados. Nenhuma instalação executada. Bootstrap GitHub tem autorização e evidências próprias em ../GITHUB.md, EVIDENCIAS-BOOTSTRAP.md e ../decisoes/REGISTRO.md.
+A-02 aprovado explicitamente em DEC-032, sessão Codex de 01/11/2026: “Aprovo o item A-02 do plano de ambiente v0.1. Pode baixar, instalar e validar o Docker conforme o plano, preservando meu PostgreSQL atual.” Instalação por usuário/WSL 2 e critérios de validação passaram: hash/assinatura/versão, CLI/Compose, motor Linux local, hello-world descartável e PostgreSQL Running/Automatic antes/depois. [Evidências e limites](EVIDENCIAS-DOCKER.md). A mensagem anterior que aprovou stack/ADRs não foi usada como autorização do instalador; a pendência foi resolvida somente por esta aprovação própria. Bootstrap GitHub tem autorização e evidências em ../GITHUB.md, EVIDENCIAS-BOOTSTRAP.md e ../decisoes/REGISTRO.md.
+
+## Retomada após PR #5 — 01/11/2026
+
+Estado histórico antes de DEC-032: documentação promovida manualmente para main, com CI documental aprovada. Reconsulta somente leitura confirmou Docker ausente do PATH e dos dois diretórios padrão; não é varredura completa de instalações. Fontes oficiais acima reconfirmaram release 4.97.0 e opção de instalação por usuário/WSL 2. Naquela coleta, nenhum instalador baixado/executado e nenhuma aprovação de A-02 recebida. Aprovação posterior e execução na seção anterior.
+
+Recomendação: preparar Docker agora para a futura execução por Compose, validar motor/Compose com contêiner descartável, sem montar pastas pessoais, sem conectar/parar o PostgreSQL nativo e sem pagamentos. Validação requer download de imagem pública de diagnóstico, além do instalador. Aceite de termos é conduzido pelo usuário. Se houver necessidade de elevação, reinício ou mudança de recursos Windows, interromper essa parte e apresentar o novo alcance antes de executar.
+
+Alternativa: adiar A-02 até a tarefa de banco/Compose e primeiro detalhar/autorizar TASK-001. A base mínima web/API dessa tarefa não depende de Docker. Isso antecipa aprendizado de Angular/Nest, mas deixa a validação da execução em contêiner para depois. Não implica adotar outra arquitetura ou usar o banco nativo. Ambas as opções preservam a necessidade de aprovar versões exatas e tarefa antes do código.

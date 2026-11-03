@@ -31,26 +31,26 @@ Scripts de instalação de quatro pacotes nativos transitivos foram bloqueados p
 - Recursos operacionais restritos a [game-vault-v2](https://github.com/geovanegalan/game-vault-v2) e [Project pessoal #2](https://github.com/users/geovanegalan/projects/2), DEC-030; sem consultar outros repositórios/organizações da conta.
 - PR #7 de planejamento mesclado manualmente pelo usuário em develop, confirmado via API. PRs #2/#4/#5/#6 anteriores também integrados pelo usuário. Main permanece na promoção documental anterior; evidências Docker, checkpoint e aplicação desta feature ainda precisam de promoção quando oportuno.
 - C-02 aprovada/aplicada (DEC-035): main/develop exigem Integridade do kit (sem testes de produto) e Build web e API (base técnica), ambos da origem GitHub Actions/15368 e strict=true. Todas as demais seções de proteção comparadas e preservadas; auto-merge=false. Workflow de build usa Node 24.21.0, npm 12.0.2, npm ci e build. Nenhum deploy, merge ou ampliação de acesso; detalhes em GITHUB.md.
-- Issues #1/#3 fechadas; Issue #8 acompanha implementação, evidências e revisão/merge manuais. Configurações de interface do Project não atestadas: repositório padrão para criar Issues, views e automações; operações usam destino explícito.
+- Issues #1/#3 fechadas; Issue #8 reaberta por autorização explícita (DEC-036), cartão Em revisão, fechamento somente após confirmar merge manual do usuário. Project #2 tem duas views e sete automações ativas confirmadas; condições/filtros e repositório padrão ainda não verificados, conforme GITHUB.md. Operações usam destino explícito.
 - Todo merge continua manual pelo usuário. Nunca executar merge/auto-merge, force-push ou push direto em main/develop. Autoria local Geovane/no-reply; Git global preservado.
 
 ## Próxima ação
 
-1. Próxima pendência: reconciliar acompanhamento. Issue #8 consta fechada enquanto PR #9 segue aberto; explicar a causa comprovável e propor alinhamento de Issue/cartão com a revisão pendente, sem atribuir fechamento a uma origem não comprovada.
+1. Próxima pendência: completar auditoria das condições/filtros das automações e repositório padrão do Project #2 pela interface autenticada. API confirmou nomes/estado ativo, mas não expõe essas configurações no tipo consultado. Navegador disponível está sem login; orientar usuário sem ampliar acesso. Issue #8 reaberta/cartão Em revisão, reconferidos após segunda reabertura por CLI; monitorar antes de integração.
 2. C-01 validada localmente/CI e C-02 aprovada/aplicada. Conferir CI do último head do PR #9 antes da revisão/merge manual. Proteções efetivas já exigem os dois checks nas duas bases; nenhum merge pelo agente.
 3. Após essa entrega, propor TASK-002 em versão concreta para modelagem/banco/dados fictícios, com sua aprovação antes de implementar. Provedor real do catálogo e parâmetros de senha/sessão permanecem para tarefas próprias.
 4. Continuar tutoria a partir dos arquivos reais e do guia. Experiência informada: TypeScript/Node/SQL intermediário/avançado, Express intermediário, Angular/Nest iniciante, Git básico e testes prévios com Jest.
 
 ## Fila de pendências — tratar uma a uma
 
-Usuário pediu listar/explicar causas e resolver em sequência, em 03/11/2026. C-01 foi aprovada em DEC-034 e validada localmente/CI. C-02 foi aprovada em DEC-035 e aplicada: ambas as bases exigem os dois checks, preservando as demais proteções. PR #9 segue aberto e Issue #8 consta fechada; alinhamento do acompanhamento é o próximo item.
+Usuário pediu listar/explicar causas e resolver em sequência, em 03/11/2026. C-01 foi aprovada em DEC-034 e validada localmente/CI. C-02 foi aprovada em DEC-035 e aplicada: ambas as bases exigem os dois checks, preservando as demais proteções. DEC-036 autorizou reabrir Issue #8 e cartão Em revisão até merge manual. Estados reconferidos pela API; condições das automações são o próximo item.
 
 | Ordem | Item e causa observada | Próxima ação / limite |
 | --- | --- | --- |
 | 1 | Aviso moderado original na dependência da CLI | Resolvida por C-01: override restrito 11.0.4, auditorias zero, testes locais e CI do commit 1b7b752 passaram |
 | 2 | Build era informativo: exigência foi separada da criação do job para não mudar proteções sem revisão | Resolvida por C-02 aprovada/aplicada: dois checks GitHub Actions/15368 e strict=true em main/develop; demais seções idênticas antes/depois |
-| 3 | Issue #8 fechada enquanto PR #9 segue aberto: estado do acompanhamento foi encerrado antes da integração | Histórico mostra evento closed pela conta geovanegalan, sem app informado; isso não distingue clique humano de ferramenta autenticada nessa conta. Alinhar Issue/cartão/STATUS com integração pendente, sem atribuir origem não comprovada |
-| 4 | Project tem repositório padrão de criação, views e automações não atestados pela configuração anterior | Conferir somente Project pessoal #2 e GameVault; registrar configurado/ausente/não acessível. Propor somente ajustes necessários; não ativar automações por inferência |
+| 3 | Issue #8 estava fechada enquanto PR #9 segue aberto: acompanhamento encerrado antes da integração | Corrigida sob DEC-036: Issue aberta e cartão Em revisão. Houve novo fechamento segundos após primeira reabertura; segunda reabertura por CLI permaneceu aberta nas releituras. Origem não comprovada; não atribuir causa só pelo nome de automação ativa |
+| 4 | Project tinha views/automações não atestadas; repositório padrão não exposto pela API consultada | Leitura confirmou View 1/quadro, View 2/tabela e sete automações ativas, inclusive Auto-close issue. Condições/filtros não acessíveis na API consultada; interface disponível sem login. Completar leitura com participação do usuário antes de propor alterações; nenhuma automação modificada |
 | 5 | PR #9 ainda aberto: revisão/merge são exclusivamente do usuário | Após correção/avaliação e CI, usuário executa integração em develop; agente nunca mergeia |
 | 6 | main mantém a promoção documental antiga; entregas seguintes estão em develop/feature | Após integração da tarefa, preparar PR develop → main e validações para merge manual do usuário |
 

@@ -68,3 +68,11 @@ Resultado esperado: correção do aviso na única cadeia observada, builds e flu
 - CI da correção e último head acompanhados no PR #9. A auditoria limpa não foi usada como substituto dos testes de compatibilidade; não significa garantia de ausência de outras vulnerabilidades.
 
 Remover/reavaliar o override quando uma atualização aprovada da CLI declarar uma versão corrigida, conferindo novamente árvore, auditorias e builds. Não alterar essa política silenciosamente ao atualizar pacotes.
+
+## Revisão do acompanhamento — DEC-036, 03/11/2026
+
+Base local: 4dd59b1; alvo: diff documental de STATUS.md, GITHUB.md, REGISTRO.md e este registro. Mesmo agente, sem representar revisão humana/independente. Sem alteração de código ou dependência, portanto testes locais de produto não repetidos.
+
+Issue #8 reaberta e cartão específico do Project #2 em Em revisão, conforme aprovação literal registrada. Histórico anterior preservado na descrição. Primeira reabertura sofreu novo fechamento; segunda reabertura pela CLI permaneceu aberta nas releituras REST/GraphQL. PR #9 aberto, sem merge. git diff --check passou. Não foram alteradas automações para forçar o resultado.
+
+Nenhum achado material no diff documental. Dúvida operacional registrada: sete automações estão ativas, inclusive Auto-close issue, mas a API consultada não revela condições/filtros e a interface disponível não tem login. Não é prova da causa do fechamento. Completar auditoria com leitura do usuário; verificar Issue/cartão novamente antes de integração. Parecer restrito ao alinhamento observado, sem autorizar merge ou afirmar estabilidade futura das automações.

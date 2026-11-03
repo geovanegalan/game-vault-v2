@@ -39,7 +39,21 @@ Campos conferidos pela CLI: **Prioridade** (Alta, Média, Baixa), **Fase** (Docu
 - PR #5: Concluída; promoção develop → main mesclada pelo usuário, commit `76df4ff`. CI em main passou (execução 41355086123); conteúdo das duas bases idêntico após promoção.
 - PR #6: Concluída; evidências Docker mescladas pelo usuário em develop, commit `e4dbe80`; CI desse commit passou (execução 41357772653). Após essa nova entrega, main ainda não contém as evidências Docker; promoção futura segue por PR e merge manual.
 
-O vínculo ao repositório foi configurado. A preferência de repositório padrão para criar Issues pela interface não foi alterada: a CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações usam sempre o destino explícito; isso não bloqueia o quadro. Views e automações da interface não foram alteradas ou atestadas.
+O vínculo ao repositório foi configurado. A preferência de repositório padrão para criar Issues pela interface não foi alterada: a CLI não a oferece em `project edit`, e o esquema `UpdateProjectV2Input` consultado não contém esse campo. As operações usam sempre o destino explícito; isso não bloqueia o quadro.
+
+### Acompanhamento da TASK-001 e auditoria do Project — 03/11/2026
+
+DEC-036 autorizou reabrir Issue #8 e colocar somente seu cartão em Em revisão, fechando após o merge manual do usuário. Descrição anterior preservada e nota de acompanhamento acrescentada. Primeira reabertura às 21:57:46 UTC foi seguida por fechamento às 21:57:55 UTC; cartão continuou Em revisão. Segunda reabertura pela CLI às 21:59:21 UTC, após estabilizar o cartão, permaneceu aberta nas releituras. Eventos identificam a mesma conta, sem app informado: não comprovam origem humana, conector ou automação. Nenhum comentário/histórico foi excluído e nenhum merge executado.
+
+Leitura somente do Project pessoal #2 confirmou:
+
+- View 1: quadro, sem filtro; interface pública mostrou colunas dos cinco estados e cartões Issue #8/PR #9 em Em revisão.
+- View 2: tabela, sem filtro. Não houve renomeação ou mudança de layout.
+- Sete automações ativas: Auto-add sub-issues to project, Auto-add to project, Auto-close issue, Item added to project, Item closed, Pull request linked to issue e Pull request merged. Nenhuma foi ativada/desativada pelo agente nesta auditoria.
+
+Limite: ProjectV2Workflow expõe nome/estado ativo, sem condições ou filtros no esquema consultado; UpdateProjectV2Input não expõe repositório padrão. A interface disponível ao agente não está autenticada. Portanto, ainda falta verificar pela interface autenticada o status que dispara Auto-close issue, filtros/destino de auto-add, destinos das demais regras e repositório padrão. Não consultar outros repositórios/organizações para isso.
+
+Hipótese, não causa comprovada: uma regra de fechamento pode interferir na sequência de reabertura/movimentação. A [descrição oficial de Auto-close issue](https://github.blog/changelog/2024-04-25-github-issues-projects-auto-close-issue-project-workflow/) explica fechamento por status configurado; o nome/estado ativo sozinho não revela qual status foi escolhido neste quadro. Próximo passo: usuário abrir menu do Project → Workflows → Auto-close issue e informar a condição exibida. Apresentar ajuste concreto e obter aprovação antes de mudar automações; manter fechamento após merge manual.
 
 ## Issues e Actions
 

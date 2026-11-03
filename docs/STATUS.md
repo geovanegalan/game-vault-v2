@@ -1,6 +1,6 @@
 # Ponto de retomada
 
-Atualizado em 03/11/2026 — TASK-001 v0.2 aprovada, implementada e verificada localmente; CI e revisão humana acompanhadas na entrega.
+Atualizado em 03/11/2026 — TASK-001 v0.2 aprovada, implementada e verificada localmente/CI; revisão humana e pendência de desenvolvimento explícitas no PR #9.
 
 ## Autoridade e escopo
 
@@ -14,7 +14,7 @@ Atualizado em 03/11/2026 — TASK-001 v0.2 aprovada, implementada e verificada l
 
 - Feature/task-001-base-tecnica criada do develop remoto após PR #7, b32002a437600354b67aee4e8290b86c8b829b28. Issue de implementação [#8](https://github.com/geovanegalan/game-vault-v2/issues/8).
 - Angular em apps/web, NestJS ESM/Express em apps/api, npm workspaces e package-lock.json único. Versões diretas aprovadas conferidas em npm ls; nenhum Git interno ou lockfile concorrente.
-- npm run build passou localmente: scripts web/API separados chamados pelo combinado retornaram sucesso. npm ci e novo build local também passaram, comprovando a instalação pelo lockfile nesta máquina. CI real do PR e seu resultado externo serão registrados no PR/Issue, sem simular execução.
+- npm run build passou localmente: scripts web/API separados chamados pelo combinado retornaram sucesso. npm ci e novo build local também passaram, comprovando a instalação pelo lockfile nesta máquina. Na implementação 0fba771, [CI documental](https://github.com/geovanegalan/game-vault-v2/actions/runs/41718315560) e [CI de build Linux](https://github.com/geovanegalan/game-vault-v2/actions/runs/41718315696) passaram, incluindo npm ci e build. Resultado do último head e revisão humana acompanham o [PR #9](https://github.com/geovanegalan/game-vault-v2/pull/9).
 - Tela inicial renderizou em pt-BR, sem erros de console capturados; Tab/Enter no link de salto focou main#conteudo. Conferência básica de teclado, sem alegar auditoria completa AXE/WCAG.
 - API em modo watch respondeu GET / 200 com GameVault API e rota inexistente 404. Servidores limitados a 127.0.0.1; processos próprios encerrados e portas 3000/4200 liberadas.
 - PostgreSQL nativo segue Running/Automatic, sem conexão a dados/credenciais ou alteração do serviço. Não foi necessário iniciar Docker para esta base.
@@ -36,7 +36,7 @@ Scripts de instalação de quatro pacotes nativos transitivos foram bloqueados p
 
 ## Próxima ação
 
-1. Conferir CI e o PR da TASK-001; usuário revisar a implementação e a pendência de desenvolvimento antes do merge manual para develop. Manter Issue #8 aberta até integração.
+1. Usuário revisar o PR #9 da TASK-001 e a pendência de desenvolvimento antes do merge manual para develop. A base foi verificada em Windows e build Linux na CI; conferir checks do último head no PR. Manter Issue #8 aberta até integração.
 2. Discutir correção compatível do aviso de tooling, sem mudar a matriz por conveniência. Nenhuma autorização para corrigir por downgrade major/override inferida.
 3. Após essa entrega, propor TASK-002 em versão concreta para modelagem/banco/dados fictícios, com sua aprovação antes de implementar. Provedor real do catálogo e parâmetros de senha/sessão permanecem para tarefas próprias.
 4. Continuar tutoria a partir dos arquivos reais e do guia. Experiência informada: TypeScript/Node/SQL intermediário/avançado, Express intermediário, Angular/Nest iniciante, Git básico e testes prévios com Jest.

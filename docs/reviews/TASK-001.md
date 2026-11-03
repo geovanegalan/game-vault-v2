@@ -24,9 +24,9 @@ Nenhum outro achado material identificado no diff revisado. Foram conferidos loo
 - API em modo watch: GET / 200, texto GameVault API; rota inexistente 404; listener somente em 127.0.0.1.
 - Processos de teste próprios encerrados; portas 3000/4200 liberadas. PostgreSQL Running/Automatic, sem conexão/alteração de dados.
 - Npm bloqueou install scripts de @parcel/watcher, esbuild, lmdb e msgpackr-extract; builds/execução passaram sem alterar essa política.
-- CI com npm ci/build e verificações documentais serão conferidas no PR; não simular sucesso antes de execução real.
+- CI real da implementação 0fba771 passou: documental 41718315560 e build 41718315696, com fixação npm, instalação npm ci e compilação em Linux bem-sucedidas. Entrega no PR #9; consultar checks do último head para a integração.
 - Conferência documental: 33 Markdown e 38 links locais sem destino ausente; três manifestos privados com patches diretos fixos; git diff --check passou. Produto/ADRs/skills/check documental preservados. Busca por padrões conhecidos de segredos/caminhos pessoais sem ocorrência, sem alegar auditoria completa.
 
 ## Parecer
 
-Implementação local verificada, com pendência de dependência de desenvolvimento acima. Pronta para avaliação humana depois da CI; merge permanece manual. Não é aprovação do agente em nome do usuário. Demais tarefas do backlog e mudança da matriz continuam sem autorização.
+Implementação verificada localmente e na CI, com pendência de dependência de desenvolvimento acima. Pronta para avaliação humana; merge permanece manual após conferir último head. Não é aprovação do agente em nome do usuário. Demais tarefas do backlog e mudança da matriz continuam sem autorização.

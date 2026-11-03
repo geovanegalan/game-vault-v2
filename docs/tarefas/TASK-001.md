@@ -1,6 +1,6 @@
 # TASK-001 — Base técnica mínima do workspace
 
-Versão: 0.2 | Estado: aprovada em DEC-033; implementada/verificada localmente, CI e revisão humana na entrega | Data: 03/11/2026
+Versão: 0.2 | Estado: aprovada em DEC-033; implementada/verificada localmente e na CI, revisão humana pendente | Data: 03/11/2026
 Issue: [#8](https://github.com/geovanegalan/game-vault-v2/issues/8) | Branch: feature/task-001-base-tecnica
 REQ: 001 a 005 (fundação) | Base: DEC-023/025/026/027/033
 
@@ -121,11 +121,11 @@ Aprovada explicitamente pelo usuário em DEC-033: “Aprovo a TASK-001 v0.2, com
 - npm ci repetido localmente a partir do lockfile passou; build combinado após essa reinstalação também passou. Conferência documental: 33 Markdown, 38 links locais válidos, manifestos privados/pins e diff check passaram.
 - Servidor Angular via MCP compilou; navegador mostrou tela inicial, title GameVault 2.0, lang pt-BR e console sem erros capturados. Tab e Enter no link de salto focaram main#conteudo. Não se afirma auditoria completa de acessibilidade ou jornada de produto.
 - API em modo watch iniciou; GET / 200 com GameVault API e rota inexistente 404. Listeners limitados a 127.0.0.1. Somente processos próprios encerrados; portas 3000/4200 liberadas depois do teste. PostgreSQL permanece Running/Automatic; sem conexão ao banco ou leitura de credenciais.
-- Novo job de build usa Node 24.21.0, npm 12.0.2, npm ci e npm run build no runner; check documental existente e proteções preservados. Resultado real da CI será registrado no PR/Issue; não presumido por configuração.
+- Novo job de build usa Node 24.21.0, npm 12.0.2, npm ci e npm run build no runner; check documental existente e proteções preservados. Execuções reais da implementação 0fba771 passaram: [documental](https://github.com/geovanegalan/game-vault-v2/actions/runs/41718315560) e [build Linux](https://github.com/geovanegalan/game-vault-v2/actions/runs/41718315696). Entrega no [PR #9](https://github.com/geovanegalan/game-vault-v2/pull/9); conferir CI do último head antes do merge.
 - Guia verificado em [COMO-EXECUTAR](../ambiente/COMO-EXECUTAR.md); revisão/pendência em [TASK-001 review](../reviews/TASK-001.md).
 
 ## Pendência e limite de conclusão
 
 npm audit identificou aviso moderado em minimatch transitivo da CLI Nest (duas entradas na mesma cadeia); npm audit --omit=dev retornou zero. npm sugeriu mudar para CLI 11.0.24, fora da matriz aprovada. Nenhuma troca/override aplicada; opções e recomendação constam na revisão para decisão humana. Npm 12 bloqueou scripts nativos transitivos; instalação, builds e execução passaram sem habilitá-los.
 
-A tarefa tem implementação e verificações locais realizadas; CI real e revisão/merge humanos integram a entrega. Isso não aprova as tarefas seguintes nem significa MVP funcional. A pendência de dependência não foi tratada como risco aceito pelo usuário.
+A tarefa tem implementação, verificações locais e CI real realizadas; pendência de desenvolvimento e revisão/merge humanos ainda integram a avaliação da entrega. Isso não aprova as tarefas seguintes nem significa MVP funcional. A pendência de dependência não foi tratada como risco aceito pelo usuário.

@@ -126,6 +126,6 @@ Aprovada explicitamente pelo usuário em DEC-033: “Aprovo a TASK-001 v0.2, com
 
 ## Pendência e limite de conclusão
 
-npm audit identificou aviso moderado em minimatch transitivo da CLI Nest (duas entradas na mesma cadeia); npm audit --omit=dev retornou zero. npm sugeriu mudar para CLI 11.0.24, fora da matriz aprovada. Nenhuma troca/override aplicada; opções e recomendação constam na revisão para decisão humana. Npm 12 bloqueou scripts nativos transitivos; instalação, builds e execução passaram sem habilitá-los.
+Na implementação original, npm audit identificou aviso moderado em minimatch transitivo da CLI Nest (duas entradas na mesma cadeia); npm audit --omit=dev retornou zero. A sugestão automática de CLI 11.0.24 não foi aplicada. Posteriormente, C-01 recebeu aprovação própria em DEC-034: override restrito para minimatch 11.0.4 aplicado, auditorias completa/sem dev com zero avisos e testes de instalação/build/watch passaram. CI do último head acompanhada no PR #9. Npm 12 manteve scripts nativos transitivos bloqueados; testes passaram sem habilitá-los.
 
-A tarefa tem implementação, verificações locais e CI real realizadas; pendência de desenvolvimento e revisão/merge humanos ainda integram a avaliação da entrega. Isso não aprova as tarefas seguintes nem significa MVP funcional. A pendência de dependência não foi tratada como risco aceito pelo usuário.
+A tarefa tem implementação, verificações locais e CI real da base realizadas, com a C-01 validada localmente. Conferir CI do último head e revisão/merge humanos para a entrega. Isso não aprova as tarefas seguintes nem significa MVP funcional. O aviso de dependência foi corrigido mediante aprovação; não tratado como risco aceito pelo usuário.

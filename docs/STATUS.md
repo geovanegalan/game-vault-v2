@@ -20,9 +20,9 @@ Atualizado em 03/11/2026 — TASK-001 v0.2 aprovada, implementada e verificada l
 - PostgreSQL nativo segue Running/Automatic, sem conexão a dados/credenciais ou alteração do serviço. Não foi necessário iniciar Docker para esta base.
 - [Guia de execução e tutoria](ambiente/COMO-EXECUTAR.md), [tarefa/evidências](tarefas/TASK-001.md) e [revisão](reviews/TASK-001.md). Base executável inicial, sem jornada do GameVault ou integração web/API.
 
-## Pendência real de dependência
+## Correção da dependência — C-01
 
-npm audit reportou aviso moderado de minimatch transitivo da CLI Nest, com duas entradas na mesma cadeia; npm audit --omit=dev retornou zero avisos. Correção sugerida pelo npm muda CLI para major 11, contrariando a matriz aprovada. Não executados fix --force, overrides ou alterações de versão. Cenário/limites e alternativas na revisão; decisão de correção permanece com o usuário, sem aceite de risco inferido.
+O aviso moderado original foi corrigido após aprovação explícita da C-01 (DEC-034): override somente sob @nestjs/cli@12.0.11 para minimatch 11.0.4, preservando versões diretas de frameworks/runtime. Árvore conferida; auditorias completa e sem dev retornaram zero avisos. npm install, npm ci, builds e modo watch/API passaram. Teste de mudança temporária de resposta confirmou recompilação e restauração com SHA-256 original. A CI do commit de correção será conferida/registrada no PR #9; não inferir sucesso antes da execução externa. Históricos e limites na revisão.
 
 Scripts de instalação de quatro pacotes nativos transitivos foram bloqueados pelo npm 12; builds/execução passaram sem alterar essa política. Reabrir terminais antigos resolve PATH do Docker; nenhuma edição global de PATH realizada nesta tarefa.
 
@@ -36,9 +36,26 @@ Scripts de instalação de quatro pacotes nativos transitivos foram bloqueados p
 
 ## Próxima ação
 
-1. Usuário revisar o PR #9 da TASK-001 e a pendência de desenvolvimento antes do merge manual para develop. A base foi verificada em Windows e build Linux na CI; conferir checks do último head no PR. Manter Issue #8 aberta até integração.
-2. Discutir correção compatível do aviso de tooling, sem mudar a matriz por conveniência. Nenhuma autorização para corrigir por downgrade major/override inferida.
+1. Conferir CI da correção C-01 e o último head do PR #9 antes da revisão/merge manual. Reconciliar depois o acompanhamento: Issue #8 consta fechada enquanto PR segue aberto, conforme fila abaixo; não atribuir fechamento a uma origem não comprovada.
+2. Próxima pendência: C-02 proposta em GITHUB.md/DEC-035 para tornar também o build obrigatório em main/develop. Somente levantamento/proposta preparados; aguardar aprovação específica antes de alterar proteção.
 3. Após essa entrega, propor TASK-002 em versão concreta para modelagem/banco/dados fictícios, com sua aprovação antes de implementar. Provedor real do catálogo e parâmetros de senha/sessão permanecem para tarefas próprias.
 4. Continuar tutoria a partir dos arquivos reais e do guia. Experiência informada: TypeScript/Node/SQL intermediário/avançado, Express intermediário, Angular/Nest iniciante, Git básico e testes prévios com Jest.
+
+## Fila de pendências — tratar uma a uma
+
+Usuário pediu listar/explicar causas e resolver em sequência, em 03/11/2026. C-01 foi depois aprovada em DEC-034 e executada com verificação local; CI da correção acompanha o PR. Reconsulta confirmou PR #9 aberto, Issue #8 fechada e somente o check documental exigido em main/develop. Nenhuma alteração de proteção/permissão executada.
+
+| Ordem | Item e causa observada | Próxima ação / limite |
+| --- | --- | --- |
+| 1 | Aviso moderado original na dependência da CLI | C-01 aprovada/aplicada: override restrito 11.0.4, auditorias zero e testes locais passaram; conferir CI da correção no PR #9 |
+| 2 | Novo build passa, mas não é obrigatório: exigência foi separada da criação do job para não mudar proteções sem revisão | C-02 concreta em GITHUB.md/DEC-035: acrescentar build da origem GitHub Actions/15368 às exigências de main/develop, preservando regras; aprovação específica antes de aplicar |
+| 3 | Issue #8 fechada enquanto PR #9 segue aberto: estado do acompanhamento foi encerrado antes da integração | Histórico mostra evento closed pela conta geovanegalan, sem app informado; isso não distingue clique humano de ferramenta autenticada nessa conta. Alinhar Issue/cartão/STATUS com integração pendente, sem atribuir origem não comprovada |
+| 4 | Project tem repositório padrão de criação, views e automações não atestados pela configuração anterior | Conferir somente Project pessoal #2 e GameVault; registrar configurado/ausente/não acessível. Propor somente ajustes necessários; não ativar automações por inferência |
+| 5 | PR #9 ainda aberto: revisão/merge são exclusivamente do usuário | Após correção/avaliação e CI, usuário executa integração em develop; agente nunca mergeia |
+| 6 | main mantém a promoção documental antiga; entregas seguintes estão em develop/feature | Após integração da tarefa, preparar PR develop → main e validações para merge manual do usuário |
+
+Avisos de install scripts bloqueados pelo npm 12 não são falha pendente: a política padrão restringiu quatro scripts transitivos e instalação/builds/execução passaram assim. Manter o comportamento atual; não liberar scripts para apenas eliminar a mensagem. Python opcional ausente e Docker sem status naquela consulta também não são bloqueios da base Node já validada.
+
+Decisões das fases seguintes continuam pendentes no contexto adequado: modelo/banco/dados fictícios (TASK-002), política de senha/sessão na autenticação e provedor/termos do catálogo real opcional. Essas escolhas serão apresentadas nas tarefas próprias; resolver esta fila não autoriza implementar o restante do MVP.
 
 Histórico da pausa de 01/11 e retomada de 03/11 preservado nos commits 0bd1ad2/4741f89 e PR #7. Ao retomar em outro chat, ler AGENTS.md, 00-contexto.md, este STATUS e decisoes/REGISTRO.md; conferir Git antes de editar e preservar mudanças do usuário. Commits públicos iniciais não foram reescritos; a minimização posterior de detalhes do host não apaga seu histórico.

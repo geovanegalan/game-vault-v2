@@ -73,7 +73,7 @@ develop         → pull request → main
 `main` e `develop` exigem PR e verificação documental. Todos os merges são feitos manualmente pelo responsável pelo projeto. A CI verifica documentação/skills e compila web/API com instalação pelo lockfile. Testes de regras e jornadas serão adicionados nas tarefas correspondentes; não há deploy. Consulte o [guia GitHub](docs/GITHUB.md).
 
 - [Backlog](docs/planejamento/BACKLOG.md): próximas tarefas, ainda sujeitas a aprovação.
-- [Revisão TASK-001](docs/reviews/TASK-001.md): verificações e aviso moderado em dependência de desenvolvimento da CLI, pendente de decisão sobre correção.
+- [Revisão TASK-001](docs/reviews/TASK-001.md): verificações e histórico da correção aprovada de dependência transitiva da CLI.
 - [Comparação de catálogo](docs/catalogo/COMPARACAO.md): provedor real ainda não escolhido.
 - [Preparação assistida do ambiente](docs/AMBIENTE.md): diagnóstico e instalações autorizadas.
 - [Fontes consultadas](docs/FONTES.md): documentação e limites das verificações.

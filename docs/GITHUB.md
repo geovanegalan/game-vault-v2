@@ -49,6 +49,22 @@ O workflow [bootstrap.yml](../.github/workflows/bootstrap.yml) executa [validar_
 
 TASK-001 acrescenta [build.yml](../.github/workflows/build.yml), com Node 24.21.0, npm 12.0.2 no runner, npm ci e npm run build. Nome do job: Build web e API (base técnica). Ele verifica instalação/compilação, sem simular testes de produto ou deploy. O nome do check documental/proteções existentes foi preservado; tornar o novo build obrigatório exige proposta/autorização própria após conferir execução real.
 
+### C-02 — Proposta para exigir também o build
+
+Estado: aguardando aprovação (DEC-035), ainda não aplicada. Reconsulta em 03/11/2026 confirmou, em main/develop, strict=true e somente Integridade do kit (sem testes de produto) obrigatório. Check-runs reais confirmaram os nomes dos dois jobs e origem GitHub Actions, app_id 15368.
+
+Proposta concreta para main e develop, exclusivamente neste repositório:
+
+- Preservar os checks já exigidos e acrescentar Build web e API (base técnica), vinculado ao app GitHub Actions 15368. Não substituir/excluir checks existentes.
+- Manter strict=true, exigindo branch atualizada; PR obrigatório, administradores incluídos, conversas resolvidas e bloqueios de força/exclusão permanecem.
+- Ler estado atual de cada branch imediatamente antes de alterar. Usar somente PATCH de protection/required_status_checks com a lista preservada mais o build; não reenviar a regra inteira de proteção ou alterar permissões não relacionadas.
+- Reler ambas as regras e conferir nomes/origem/strict, comparar os demais controles e conferir checks do PR #9. Não executar merge ou criar um commit propositalmente quebrado para testar.
+- Se configuração divergir inesperadamente ou apenas uma branch for alterada, informar o resultado exato e interromper a parte afetada; não reduzir proteções por conveniência.
+
+Efeito esperado: merge bloqueado se o build falhar ou não existir, mesmo quando a documentação passar. O workflow da TASK-001 precisa acompanhar os próximos PRs, inclusive a promoção develop → main. Alternativa de manter o build informativo evita a mudança, mas não fecha a pendência de controle técnico; recomendação é torná-lo obrigatório após aprovação.
+
+Fonte: [API oficial de status checks obrigatórios](https://docs.github.com/en/rest/branches/branch-protection#update-status-check-protection). Merges continuam exclusivamente manuais pelo usuário.
+
 CI significa verificação automática de alterações. Integridade documental e build são evidências distintas; não comprovam regras de negócio ou jornadas do MVP. Lint, testes de produto e eventual entrega terão implementação proporcional nas tarefas aprovadas. Nenhum deploy configurado ou autorizado.
 
 ## Recuperação e histórico

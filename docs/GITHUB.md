@@ -87,7 +87,15 @@ Após aprovação: edição pelo usuário na interface autenticada; informar a c
 
 Resultado: usuário informou “Feito, alterei o Status inicial para Backlog e mantive a regra ativa, preservando as demais configurações. Pode conferir o que for possível pela API e depois seguimos para a próxima pendência.” Comparação das sete regras por ID com cópia anterior confirmou nomes/números/estados enabled idênticos, sem adição/remoção; Item added to project ativa, Auto-close issue desativada, demais cinco ativas. Issue #8 OPEN/cartão Em revisão e PR #9 aberto/merged=false. Backlog e preservação das condições internas são confirmados pelo usuário; não foram lidos diretamente pela API, que não os expõe no tipo consultado. Nenhum item artificial criado/movido para teste e nenhum merge executado.
 
-Próxima leitura solicitada: Item closed, tipos de item e Status atribuído. Depois continuar as demais regras/repositório padrão, sem modificar configurações por inferência.
+### C-06 — Proposta de revisão de Item closed
+
+Estado: proposta, aguardando aprovação específica (DEC-039). Usuário informou nesta sessão em 03/11/2026, ao ler Item closed: “Status: Em revisão”. Ao confirmar os tipos, respondeu: “aparece \"issue, pull request\"”. Classificação: configuração relatada pelo usuário; não comparada pela API nem autorização de alteração. Isso move itens fechados para revisão, tornando o quadro ambíguo.
+
+Recomendação: desativar somente Item closed; preservar as demais regras, inclusive Item added to project ativa/Backlog e Auto-close issue desativada. Após confirmar merge manual do usuário, fechar Issue #8 e mover seu cartão para Concluída explicitamente; um PR fechado sem integração exige avaliar o motivo antes de concluir sua tarefa. A regra separada Pull request merged ainda precisa de leitura; sua configuração não é inferida nesta proposta.
+
+Alternativa: manter Item closed ativa e trocar Status para Concluída. Reduz movimentação manual, mas marca também PR fechado sem merge como concluído; não constitui garantia de integração. Deixar Em revisão mantém a ambiguidade. Nenhuma opção executada.
+
+Após aprovação: salvar nova cópia dos sete IDs/nomes/estados enabled; usuário desativar somente Item closed na interface. Agente comparar pela API: somente essa regra true → false, mantendo Auto-close issue false e outras cinco true, sem adição/remoção. Conferir Issue #8 aberta/cartão Em revisão e PR #9 aberto/sem merge, sem fechar/mover item de teste. Nenhuma alteração de código, proteção, permissões ou demais condições. Recuperação: reativar somente essa regra após revisar a condição adequada. Depois continuar leitura de Pull request linked to issue, Pull request merged, Auto-add sub-issues e repositório padrão.
 
 ## Issues e Actions
 

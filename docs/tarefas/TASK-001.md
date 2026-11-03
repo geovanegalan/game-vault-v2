@@ -1,8 +1,8 @@
 # TASK-001 — Base técnica mínima do workspace
 
-Versão: 0.2 | Estado: proposta concreta, aguardando aprovação | Data: 03/11/2026
-Issue de implementação: ainda não criada | Branch futura: feature/task-001-base-tecnica
-REQ: 001 a 005 (fundação) | Base: DEC-023/025/026/027 | Proposta: DEC-033
+Versão: 0.2 | Estado: aprovada em DEC-033; implementada/verificada localmente e na CI, revisão humana pendente | Data: 03/11/2026
+Issue: [#8](https://github.com/geovanegalan/game-vault-v2/issues/8) | Branch: feature/task-001-base-tecnica
+REQ: 001 a 005 (fundação) | Base: DEC-023/025/026/027/033
 
 ## Objetivo e aprendizado
 
@@ -52,7 +52,7 @@ Forms, animations, zone.js, SSR, Vitest e outras ferramentas opcionais não são
 5. Acrescentar CI de build com instalação reproduzível por npm ci, Node/npm fixados e build dos dois pacotes; manter o check documental existente com seu nome exigido pelas proteções. Não configurar deploy nem alterar proteções nesta tarefa. Propor exigir o novo check em etapa própria após evidência de execução real.
 6. Atualizar README, guia de execução e evidências; revisar diff e abrir PR para develop. Usuário faz o merge manualmente.
 
-### Referência dos geradores — proposta, não executar agora
+### Referência dos geradores — plano aprovado
 
 Comandos abaixo são referências de planejamento baseadas nas opções oficiais. Após aprovação, conferir --help da versão fixada antes de executá-los; npm exec baixa/executa ferramentas no cache e não equivale a uma consulta somente leitura.
 
@@ -103,11 +103,29 @@ Se dependências diretas não resolverem a matriz, não concluir compatibilidade
 - [npm: workspaces](https://docs.npmjs.com/cli/v12/using-npm/workspaces/) e [npm exec](https://docs.npmjs.com/cli/v12/commands/npm-exec/).
 - Metadados primários de versões: [Angular core 22.2.4](https://registry.npmjs.org/@angular%2Fcore/22.2.4), [compiler-cli 22.2.4](https://registry.npmjs.org/@angular%2Fcompiler-cli/22.2.4), [build 22.2.5](https://registry.npmjs.org/@angular%2Fbuild/22.2.5), [Nest core 12.3.2](https://registry.npmjs.org/@nestjs%2Fcore/12.3.2), [Nest CLI 12.0.11](https://registry.npmjs.org/@nestjs%2Fcli/12.0.11), [Nest schematics 12.0.12](https://registry.npmjs.org/@nestjs%2Fschematics/12.0.12) e [TypeScript 6.0.3](https://registry.npmjs.org/typescript/6.0.3); pares/engines e dependências auxiliares consultados no mesmo registro.
 
-Diagnóstico de 03/11: Git limpo na branch de checkpoint, Node 24.21.0, npm 12.0.2, Docker CLI 29.9.2 e Compose v5.6.1 responderam. Docker Desktop não informou status do motor nessa consulta; não iniciado/atualizado por esta preparação. TASK-001 não depende de Docker. Nenhum gerador, instalação, build, teste de aplicação ou nova aplicação executado/criado.
+Estado histórico da preparação em 03/11, antes de DEC-033: Git limpo na branch de checkpoint, Node 24.21.0, npm 12.0.2, Docker CLI 29.9.2 e Compose v5.6.1 responderam. Docker Desktop não informou status do motor naquela consulta e não foi iniciado/atualizado. TASK-001 não depende de Docker. Naquela fase nenhum gerador, instalação, build ou aplicação tinha sido executado/criado; execução após aprovação abaixo.
 
 ## Aprovação e histórico
 
-Pendente: aprovar explicitamente TASK-001 v0.2, sua matriz de versões, plano/escopo e verificações antes de executar. Merge do PR documental ou “vamos continuar” não são tratados como autorização de instalar/gerar código. Aprovação desta tarefa não aprova automaticamente o restante do backlog.
+Aprovada explicitamente pelo usuário em DEC-033: “Aprovo a TASK-001 v0.2, com as versões e o plano propostos. Fiz o merge do PR #7. Pode conferir e começar a implementação com a tutoria.” A aprovação abrange a matriz de versões, plano/escopo e verificações; o merge documental foi conferido antes da execução. Aprovação desta tarefa não aprova automaticamente o restante do backlog. Textos de proposta acima preservam o conteúdo apresentado e aprovado.
 
 - v0.1 (01/11/2026): proposta inicial, sem patches ou plano de geração detalhado; não autorizada.
-- v0.2 (03/11/2026): proposta concreta com versões, alternativas, limites, geração, validação e tutoria; ainda não autorizada. Conteúdo anterior recuperável no Git.
+- v0.2 (03/11/2026): proposta concreta com versões, alternativas, limites, geração, validação e tutoria; posteriormente aprovada explicitamente em DEC-033. Conteúdo anterior recuperável no Git.
+
+## Execução e evidências — 03/11/2026
+
+- PR #7 confirmado mesclado em develop, b32002a; feature criada desse remoto, preservando o checkpoint. Aprovação registrada antes de geração/instalação; Issue #8 e cartão de implementação criados.
+- Opções --help das CLIs fixadas conferidas. Geradores executados com skip-install/skip-git e ambiente não interativo; Angular com ai-config=none adicional. Nest gerou ESM, sem Observe. Removidos somente artefatos recém-gerados de teste/lint/deploy, READMEs duplicados, configurações de editor e instruções opcionais de observabilidade fora do escopo.
+- Versões diretas da matriz confirmadas por npm ls --depth=0; npm install criou um lockfile na raiz. Sem Git interno ou lockfiles concorrentes. Nenhuma instalação global na máquina.
+- npm run build executou os scripts web/API separados e passou com código 0. Saídas conferidas: apps/web/dist/web/browser e apps/api/dist/main.js.
+- npm ci repetido localmente a partir do lockfile passou; build combinado após essa reinstalação também passou. Conferência documental: 33 Markdown, 38 links locais válidos, manifestos privados/pins e diff check passaram.
+- Servidor Angular via MCP compilou; navegador mostrou tela inicial, title GameVault 2.0, lang pt-BR e console sem erros capturados. Tab e Enter no link de salto focaram main#conteudo. Não se afirma auditoria completa de acessibilidade ou jornada de produto.
+- API em modo watch iniciou; GET / 200 com GameVault API e rota inexistente 404. Listeners limitados a 127.0.0.1. Somente processos próprios encerrados; portas 3000/4200 liberadas depois do teste. PostgreSQL permanece Running/Automatic; sem conexão ao banco ou leitura de credenciais.
+- Novo job de build usa Node 24.21.0, npm 12.0.2, npm ci e npm run build no runner; check documental existente e proteções preservados. Execuções reais da implementação 0fba771 passaram: [documental](https://github.com/geovanegalan/game-vault-v2/actions/runs/41718315560) e [build Linux](https://github.com/geovanegalan/game-vault-v2/actions/runs/41718315696). Entrega no [PR #9](https://github.com/geovanegalan/game-vault-v2/pull/9); conferir CI do último head antes do merge.
+- Guia verificado em [COMO-EXECUTAR](../ambiente/COMO-EXECUTAR.md); revisão/pendência em [TASK-001 review](../reviews/TASK-001.md).
+
+## Pendência e limite de conclusão
+
+Na implementação original, npm audit identificou aviso moderado em minimatch transitivo da CLI Nest (duas entradas na mesma cadeia); npm audit --omit=dev retornou zero. A sugestão automática de CLI 11.0.24 não foi aplicada. Posteriormente, C-01 recebeu aprovação própria em DEC-034: override restrito para minimatch 11.0.4 aplicado, auditorias completa/sem dev com zero avisos e testes de instalação/build/watch passaram. CI do último head acompanhada no PR #9. Npm 12 manteve scripts nativos transitivos bloqueados; testes passaram sem habilitá-los.
+
+A tarefa tem implementação, verificações locais e CI real da base realizadas, com a C-01 validada localmente. Conferir CI do último head e revisão/merge humanos para a entrega. Isso não aprova as tarefas seguintes nem significa MVP funcional. O aviso de dependência foi corrigido mediante aprovação; não tratado como risco aceito pelo usuário.

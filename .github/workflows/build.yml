@@ -1,0 +1,31 @@
+name: Build da base técnica
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build web e API (base técnica)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.21.0'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Fixar npm no runner
+        run: npm install --global npm@12.0.2 --registry=https://registry.npmjs.org/
+      - name: Instalar resolução do lockfile
+        run: npm ci
+      - name: Compilar web e API
+        run: npm run build

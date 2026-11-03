@@ -1,15 +1,15 @@
 # Backlog inicial e sequência de trabalho
-Versão: 0.1 | Estado: proposta | Data: 01/11/2026
+Versão: 0.1 | Estado: proposta | Data: 01/11/2026 | Situação/referências atualizadas em 03/11/2026
 Base de produto: DEC-023. Base técnica aprovada: COMPARACAO-STACK v0.1 e ADR-001/002 v0.1, DEC-025/026/027. O backlog continua planejamento, sem autorização automática das tarefas.
 
-TASK-000 é acompanhada pela [Issue #1](https://github.com/geovanegalan/game-vault-v2/issues/1) no [Project GameVault](https://github.com/users/geovanegalan/projects/2). Os demais IDs abaixo são locais, sem Issues de aplicação criadas. As linhas definem resultados e dependências, não autorizam execução em bloco. Cada tarefa de aplicação receberá detalhamento e autorização antes de começar. Dividir tarefas que não couberem numa sessão confortável; não prometer prazo a partir da disponibilidade estimada.
+TASK-000 foi acompanhada pela [Issue #1](https://github.com/geovanegalan/game-vault-v2/issues/1), agora fechada no [Project GameVault](https://github.com/users/geovanegalan/projects/2); evidências Docker integradas pelo PR #6. Os demais IDs abaixo são locais, sem Issues de aplicação criadas. TASK-001 detalhada em v0.2, aguardando aprovação. As linhas definem resultados e dependências, não autorizam execução em bloco. Cada tarefa de aplicação receberá detalhamento e autorização antes de começar. Dividir tarefas que não couberem numa sessão confortável; não prometer prazo a partir da disponibilidade estimada.
 
 | Tarefa | Resultado demonstrável e critério principal | REQ / decisões | Dependências | Validação e exclusões |
 | --- | --- | --- | --- | --- |
 | TASK-000 | Documentação final revisada, README e navegação coerentes; primeiro commit documental e bootstrap GitHub verificados | DEC-023/024; plano ambiente-GitHub | Aprovação técnica e finalização dos documentos; identidade Git confirmada | Integridade documental, revisão dos arquivos exatos, branches/remoto/checks; sem aplicação ou instalação da stack |
-| TASK-001 | Base web/API e workspace geram build com versões fixadas | REQ-001 a 005; ADR-001 proposto | TASK-000, stack/arquitetura/ambiente e tarefa aprovados | Build separado, execução básica, estrutura e lockfile; sem funcionalidades de produto |
+| TASK-001 | Base web/API e workspace geram build com versões fixadas | REQ-001 a 005; ADR-001 aprovado; proposta DEC-033 | TASK-000 atendida; TASK-001 v0.2 e matriz de versões aguardam aprovação | Build separado, execução básica, estrutura, lockfile e CI de build; sem funcionalidades de produto |
 | TASK-002 | Banco e dados fictícios iniciais com preservação entre reinícios | REQ-001/005; P-05, DEC-020 | TASK-001 e modelo/migrações aprovados | Inicialização repetida sem duplicação; banco de teste separado; sem dados do legado |
-| TASK-003 | Cadastro/login/saída, nickname e email conforme PRD, com contas demonstrativas | REQ-005; ADR-002 proposto | TASK-002; política de senha/sessão e tarefa aprovadas | Unitários e integração: duplicatas/capitalização, login incorreto, logout e autorização; sem recuperação/confirmação de email |
+| TASK-003 | Cadastro/login/saída, nickname e email conforme PRD, com contas demonstrativas | REQ-005; ADR-002 aprovado | TASK-002; política de senha/sessão e tarefa aprovadas | Unitários e integração: duplicatas/capitalização, login incorreto, logout e autorização; sem recuperação/confirmação de email |
 | TASK-004 | Uma primeira jornada visual: consulta de jogo fictício e perfil mínimo | REQ-001/005; P-03/04 | TASK-001/002 e proposta de telas revisada | Carregando/vazio/erro, leitura de visitante, teclado; sem importar interface antiga |
 | TASK-005 | Biblioteca pública com adição/remoção/estado/favorito | REQ-002; P-01 | TASK-003/004 | Duplicata, outro usuário, transições/readição; sem avaliação nesta tarefa |
 | TASK-006 | Criar/editar/excluir avaliação conforme condição de biblioteca | REQ-003; P-06 | TASK-005 | Nota válida/zero, duplicidade, remoção do jogo e readição, autoria; sem feed |
@@ -29,4 +29,4 @@ CI é a verificação automática de alterações; CD pode significar preparar e
 Propor uma Issue por tarefa pronta, ligada a REQ → DEC/ADR → TASK → PR → evidência. Colunas do Project: Backlog, Pronta, Em andamento, Em revisão, Concluída. Somente promover a Pronta quando dependências/aceite estiverem claros; integração pendente não é conclusão da versão.
 
 ## Aprovação
-Pendente. TASK-000 materializa a sequência já solicitada, mas bootstrap/proteções exigem o plano concreto e identidade. TASK-001 v0.1 está em `../tarefas/TASK-001.md`; não autorizada por esta lista.
+Pendente para o backlog de aplicação. TASK-000 e A-02 foram executadas sob autorizações próprias; isso não aprova as tarefas seguintes. TASK-001 v0.2 está em `../tarefas/TASK-001.md` e DEC-033; não autorizada por esta lista. As atualizações de 03/11 corrigem situação/referências, sem transformar o restante do planejamento em autorização de execução.

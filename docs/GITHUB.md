@@ -103,15 +103,23 @@ Resultado após participação do usuário: “Feito, desativei somente o Item c
 
 Usuário relatou nesta sessão em 03/11/2026: “Set value: Status: Em andamento”. A pergunta também pedia itens abrangidos, mas a resposta não os especificou; não inferir o alvo exato da configuração a partir do nome. API confirma regra ativa, sem expor condição/valor internos. Em andamento pode representar trabalho em curso ao vincular um PR; o vínculo sozinho não comprova aprovação da tarefa ou prontidão para revisão. Nenhum defeito ou autorização de mudança inferido; regra preservada, movimentação para Em revisão segue conforme prontidão real do PR.
 
-### C-07 — Proposta de destino após merge
+### C-07 — Destino Concluída após merge confirmado pelo usuário
 
-Estado: proposta, aguardando aprovação específica (DEC-040). Usuário informou nesta sessão em 03/11/2026, ao ler Pull request merged: “Status: Em revisão”. Configuração relatada pelo usuário; API consultada confirma regra ativa, mas não expõe o valor interno. Merge já realizado devolve cartão à revisão, contrariando o significado operacional desse estado.
+Estado: aprovada em DEC-040, executada e confirmada pelo usuário na interface; alcance disponível conferido pela API em 03/11/2026. Cópia anterior salva: sete regras, Pull request merged ativa, Auto-close issue e Item closed desativadas e quatro outras ativas; Issue #8 OPEN/cartão Em revisão e PR #9 aberto/sem merge. Usuário informou originalmente nesta sessão: “Status: Em revisão”. A autorização posterior está transcrita em DEC-040. API não expõe o valor interno; o destino original devolvia cartão mesclado à revisão, contrariando o significado desse estado.
 
 Recomendação C-07: alterar somente Set value → Status de Pull request merged, de Em revisão para Concluída, mantendo a regra ativa e as demais configurações. A regra reage ao merge efetivo, não executa merge; toda integração continua manual pelo usuário. Não alterar cartões de PRs ainda abertos nem inferir fechamento da Issue por essa mudança. Alternativa: desativar somente essa regra e mover o cartão manualmente após conferir merge, com mais trabalho de acompanhamento.
 
 Após aprovação: salvar cópia dos sete IDs/nomes/estados de ativação; usuário editar somente Status na interface e confirmar valor exibido/regra ativa. Agente comparar identidades/ativação pela API, mantendo Auto-close issue e Item closed desativadas e outras cinco ativas, sem adição/remoção; conferir Issue #8 aberta/cartão Em revisão e PR #9 aberto/sem merge. Valor Concluída depende da confirmação visual do usuário; API não o expõe no tipo consultado. Não executar merge, criar item artificial ou concluir cartão antecipadamente para testar. Para desfazer, reverter somente o valor na interface após revisão. Depois completar alvo de Pull request linked to issue, Auto-add sub-issues e repositório padrão.
 
-Fonte: [automações integradas do GitHub](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-built-in-automations), que descreve atualização de Status após PR mesclado. Nenhuma alteração C-07 aplicada.
+Resultado: usuário informou “Feito, alterei o Status de Pull request merged para Concluída e mantive a regra ativa, preservando as demais configurações. Pode conferir o que for possível pela API e depois seguimos para a próxima pendência.” Comparação com cópia anterior confirmou sete IDs/nomes/números/estados enabled idênticos, sem adição/remoção; Pull request merged ativa, Auto-close issue/Item closed desativadas e quatro outras ativas. Issue #8 OPEN/cartão Em revisão e PR #9 aberto/merged=false. Concluída e condições internas dependem da confirmação do usuário; API não os expõe no tipo consultado. Não houve merge, criação de item artificial ou movimentação antecipada de cartão para testar.
+
+Fonte: [automações integradas do GitHub](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-built-in-automations), que descreve atualização de Status após PR mesclado.
+
+### Leitura de Auto-add sub-issues to project
+
+Usuário informou nesta sessão em 03/11/2026: “When an item in the project has sub-issues | Add sub-issues to the project | Aparece só isso... nao tem status como nos outros nada...”. Regra ativa pela API; condição/ação relatadas pelo usuário. Inclui subtarefas de item já no Project; nenhum filtro/Status/limite de repositório foi mostrado na leitura informada. Isso não amplia o alcance autorizado ao agente, restrito ao GameVault. Nenhuma alteração ou defeito inferido.
+
+O Status inicial continua definido na regra separada Item added to project, aprovada como Backlog. Não foi criada subtarefa artificial para testar a interação/ordem de execução dessas regras. Últimas leituras solicitadas: texto completo When/Set de Pull request linked to issue, incluindo alvo se indicado, e valor de Default repository em Settings. API consultada não expõe esses detalhes; não declarar configuração ausente só por ela não estar disponível na API. Caminho do repositório padrão confirmado na [documentação oficial](https://docs.github.com/en/issues/planning-and-tracking-with-projects/managing-your-project/adding-your-project-to-a-repository#setting-a-default-repository-for-your-project).
 
 ## Issues e Actions
 
